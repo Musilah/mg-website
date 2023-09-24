@@ -13,7 +13,7 @@
 <body>
 
   <!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top" style="background-color: #ffffff; font-size: 21px;">
+<nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #ffffff; font-size: 21px;">
   <div class="container">
     <a class="navbar-brand" href="index.html" style="color: black;">
       ABSTRACT MACHINES
@@ -56,8 +56,13 @@
 </nav>
 
 
-<!-- Header section -->
-<section id="header" class="py-5 mt-5" style="font-size: 21px;">
+
+
+
+
+
+<!-- Description section -->
+<section id="description" class="py-5 mt-5" style="font-size: 21px;">
   <div class="container">
     <div class="row mt-5">
       <div class="col">
@@ -68,12 +73,20 @@
           Embrace the future of IoT technology confidently, and simplify your IoT device management with our cutting-edge platform.</p>
       </div>
     </div>
+  </div>
+</section>
+<!-- End of Description section -->
 
 
-    <div class="row mt-5">
-      <div class="col">
+
+<!-- Cards section -->
+<section id="cards" class="py-5 mb-5">
+  <div class="container">
+    <!-- Cards will stack on top of each other on small screens -->
+    <div class="row">
+      <div class="col-md-6 mb-4">
         <div class="card">
-          <div class="card-img-top" style="background: radial-gradient(circle at 60% 40%, #0f940d 25%, transparent 26%),radial-gradient(circle at 40% 60%, #0f940d80 25%, transparent 26%) ;
+          <div class="card-img-top" style="background: radial-gradient(circle at 60% 40%, #0f940d 25%, transparent 26%),radial-gradient(circle at 40% 60%, #0f940d80 25%, transparent 26%);
             background-size: 3em 3em;
             background-color: #ffffff;
             opacity: 1; min-height: 150px; background-color: #D8EFD3;"></div>
@@ -84,7 +97,8 @@
           </div>
         </div>
       </div>
-      <div class="col">
+
+      <div class="col-md-6 mb-4">
         <div class="card">
           <div class="card-img-top" style="background: radial-gradient(#38a2be 15%, transparent 16%), linear-gradient(45deg, transparent 49%, #38a2be 49% 51%, transparent 51%), linear-gradient(-45deg, transparent 49%, #38a2be 49% 51%, transparent 51%);
             background-size: 3em 3em;
@@ -94,20 +108,16 @@
             <h3 class="card-title">Magistrala - Scalable IoT Messaging</h3>
             <p class="card-text">Magistrala IoT platform offers scalable IoT messaging, providing seamless integration for MQTT, CoAP, HTTP, and WebSocket protocols. It leverages clustered, fault-tolerant, and highly-available servers to ensure dependable performance. Elevate your IoT infrastructure with real-time event management, support for various industrial protocols, and efficient message storage solutions.</p>
             <a href="magistrala.html" class="btn btn-primary btn-lg btn-block mt-3 w-100">Go to Magistrala</a>
-          </div>     
+          </div>
         </div>
       </div>
     </div>
-    
-    
-    
-    
-
-
-
   </div>
 </section>
-<!-- End of Header section -->
+<!-- End of Cards section -->
+
+
+
 
 
 
@@ -189,7 +199,7 @@
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.1/dist/esm/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 </body>

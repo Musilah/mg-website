@@ -6,3 +6,17 @@
 header {
     font-size: 21px;
 }
+
+
+/* Default size for smaller screens */
+.img-fluid-large {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Adjust size for larger screens */
+@media (min-width: 768px) {
+    .img-fluid-large {
+        max-width: 80%; /* Adjust this value as needed for the desired scaling percentage */
+    }
+}
