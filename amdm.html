@@ -45,7 +45,7 @@
           <a class="nav-link" href="contact.html" style="color: black;">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" style="color: black;">Blog</a>
+          <a class="nav-link" href="https://medium.com/abstract-machines-blog" style="color: black;">Blog</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="https://github.com/absmach" style="color: black;"><i class="fab fa-github"></i></a>
@@ -83,23 +83,26 @@
 <!-- AM:DM section -->
 <section id="amdm" class="py-5" style="font-size: 21px; background-color: #B5D3E7;">
   <div class="container">
-      <div class="row">
-          <div class="col-md-12 mt-5">
-              <h1>What is AM:DM</h1>
-              <p>Abstract Machines is an IoT infrastructure and security company located in Paris, specializing in developing software and tools to help organizations and developers create secure and scalable IoT applications. The company focuses on developing open-source frameworks, libraries, and APIs that allow developers to connect IoT devices, manage data streams, and integrate with other systems.</p>
-              <p>Security is a top priority at Abstract Machines, with the company highly committed to creating software that is resistant to cyber attacks. Abstract Machines develops encryption protocols, security frameworks, and other tools to enable developers to build secure IoT applications. The company's goal is to provide a secure and trusted platform for developers to build on, allowing them to concentrate on developing innovative IoT solutions without the worry of security risks.</p>
-              <p>Abstract Machines is an open-source company that is actively fostering a community of developers and contributors who can help to improve its software and drive innovation in the IoT industry. The company hosts events, creates discussion forums, and offers training and support to developers interested in utilizing its tools and technologies. Abstract Machines believes that by working together, a better future for IoT can be created that is open, secure, and innovative.</p>
-          </div>
+    <div class="row">
+      <div class="col-md-12 mt-5">
+        <h1>What is AM:DM</h1>
+        <p>AM:DM is a secure device management Software as a Service (SaaS) platform designed to tackle the intricate challenges of IoT. AM:DM is rooted in the powerful core technology of open-source Superflux IoT platform.</p>
+        <p>IoT devices communicate over diverse protocols, including MQTT and CoAP, which can pose intricate authorization and authentication challenges. AM:DM steps in as a comprehensive solution, prioritizing security and fine-grained access control for IoT devices. Its primary mission is to provide and manage device identities, ensure authentication, and authorize customer devices with the utmost security.</p>
+        <p>AM:DM's significance lies in its ability to simplify and secure fleet management for IoT devices across cloud and edge environments. It offers developers and organizations a robust framework, ensuring the highest levels of device identity, authorization, and authentication security. With AM:DM, you can take control of your IoT infrastructure with peace of mind.</p>
+        <p>At its core, AM:DM is not just a software platform; it represents a commitment to open-source collaboration. Abstract Machines actively fosters a developer community that works together to improve the platform and drive innovation in the IoT industry. We offer various resources, including events, forums, training, and support, to empower developers to make the most of our cutting-edge tools and technologies.</p>
+        <p>AM:DM is your gateway to a secure, scalable, and innovative IoT device management experience. Explore its technical prowess and discover how it can revolutionize your IoT ecosystem.</p>
       </div>
+    </div>
   </div>
 </section>
 <!-- End of AM:DM section -->
 
 
+
 <!-- AM:DM section -->
 <section id="amdm" class="py-5" style="font-size: 21px; background-color: #D8EFD3;">
   <div class="container">
-    <div class="row">
+    <div class="row mb-5">
       <div class="col-md-6 mt-5">
         <div class="d-flex align-items-center justify-content-center">
           <img src="img/amdm-concept.png" alt="pattern-white" class="img-fluid">
@@ -108,15 +111,20 @@
       <div class="col-md-6">
         <div class="mt-5">
           <h1>How AM:DM Works</h1>
-          <p>Abstract Machines is an IoT infrastructure and security company located in Paris, specializing in developing software and tools to help organizations and developers create secure and scalable IoT applications. The company focuses on developing open-source frameworks, libraries, and APIs that allow developers to connect IoT devices, manage data streams, and integrate with other systems.</p>
-          <p>Security is a top priority at Abstract Machines, with the company highly committed to creating software that is resistant to cyber attacks. Abstract Machines develops encryption protocols, security frameworks, and other tools to enable developers to build secure IoT applications. The company's goal is to provide a secure and trusted platform for developers to build on, allowing them to concentrate on developing innovative IoT solutions without the worry of security risks.</p>
-          <p>Abstract Machines is an open-source company that is actively fostering a community of developers and contributors who can help to improve its software and drive innovation in the IoT industry. The company hosts events, creates discussion forums, and offers training and support to developers interested in utilizing its tools and technologies. Abstract Machines believes that by working together, a better future for IoT can be created that is open, secure, and innovative.</p>
+          <p>AM:DM is a comprehensive IoT management solution that operates seamlessly between your IoT devices and cloud infrastructure.</p>
+          <p>At its core, AM:DM consists of two key components:</p>
+          <ul>
+            <li><strong>Cloud Component (SaaS):</strong> In the cloud, AM:DM's Policy Decision Point (PDP) executes pre-defined rules and policies for authentication and authorization decisions. It ensures that your IoT devices are securely connected and operate according to your specified access controls.</li>
+            <li><strong>On-Premise Component (AProxy):</strong> AProxy, an open-source IoT protocol proxy, serves as the Policy Enforcement Point (PEP) within your on-premise infrastructure. It safeguards your IoT backend by enforcing authentication and authorization checks. Importantly, AProxy communicates with AM:DM's cloud component via secure HTTP or gRPC connections, exchanging only authorization data. Your IoT messages remain within your private cloud, with AProxy routing them directly to your private IoT backend, never leaving your data center.</li>
+          </ul>
+          <p>AM:DM's architecture ensures that your IoT data remains secure and confidential within your organization's infrastructure while benefiting from centralized and robust access control provided by the cloud component. This combination offers a powerful and trusted solution for managing your IoT ecosystem.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 <!-- End of AM:DM section -->
+
 
 
 
@@ -130,11 +138,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12 text-center mt-5 mb-5">
-        <h2>AM:DM Features</h2>
+        <h2>Key Features of AM:DM</h2>
       </div>
     </div>
     <div class="row">
-      <!-- First benefit - Device Identity -->
+      <!-- Device Identity -->
       <div class="col-md-6 mb-4">
         <div class="row">
           <div class="col-3">
@@ -144,13 +152,13 @@
           </div>
           <div class="col-9">
             <h5 class="text-left mb-3">Device Identity</h5>
-            <p class="text-left">Empower your IoT ecosystem with streamlined device management. Effortlessly manage device registration, configuration, monitoring, and lifecycle operations through an intuitive interface.</p>
+            <p class="text-left">Empower your IoT ecosystem with streamlined device identity management. Effortlessly manage device registration, configuration, monitoring, and lifecycle operations through an intuitive interface.</p>
           </div>
         </div>
       </div>
-      <!-- End of first benefit - Device Identity -->
+      <!-- End of Device Identity -->
 
-      <!-- Third benefit - IoT Authentication and Authorization -->
+      <!-- IoT Authentication and Authorization -->
       <div class="col-md-6 mb-4">
         <div class="row">
           <div class="col-3">
@@ -164,9 +172,9 @@
           </div>
         </div>
       </div>
-      <!-- End of third benefit - IoT Authentication and Authorization -->
+      <!-- End of IoT Authentication and Authorization -->
 
-      <!-- Second benefit - Device Groups -->
+      <!-- Device Grouping and Organization -->
       <div class="col-md-6 mb-4">
         <div class="row">
           <div class="col-3">
@@ -175,14 +183,16 @@
             </div>
           </div>
           <div class="col-9">
-            <h5 class="text-left mb-3">Device Groups</h5>
-            <p class="text-left">Facilitate seamless communication between IoT devices and cloud services. Ensure real-time data exchange and interactions with support for various IoT protocols, enabling reliable and efficient messaging.</p>
+            <h5 class="text-left mb-3">Device Grouping and Organization</h5>
+            <p class="text-left">Effortlessly organize your IoT devices into groups and sub-groups with infinite hierarchies. Create logical structures that suit your IoT ecosystem and attach customized policies at the group level for simplified management and control.</p>
           </div>
         </div>
       </div>
-      <!-- End of second benefit - Device Groups -->
+      <!-- End of Device Grouping and Organization -->
 
-      <!-- Fourth benefit - Configuration and Provisioning -->
+
+
+      <!-- Efficient Configuration -->
       <div class="col-md-6 mb-4">
         <div class="row">
           <div class="col-3">
@@ -191,14 +201,15 @@
             </div>
           </div>
           <div class="col-9">
-            <h5 class="text-left mb-3">Configuration and Provisioning</h5>
-            <p class="text-left">Optimize your IoT infrastructure with efficient edge service orchestration. Enable local data preprocessing, decision-making, and communication between edge devices and cloud services for enhanced performance and reduced latency.</p>
+            <h5 class="text-left mb-3">Efficient Configuration</h5>
+            <p class="text-left">Streamline your IoT infrastructure with advanced configuration capabilities. Implement remote configuration, zero-touch provisioning, and bootstrapping server functionality to optimize performance, reduce latency, and simplify device setup and management.</p>
           </div>
         </div>
       </div>
-      <!-- End of fourth benefit - Configuration and Provisioning -->
+      <!-- End of Efficient Configuration -->
 
-      <!-- Fifth benefit - Agnostic to IoT Backend -->
+
+      <!-- IoT Backend Agnosticism -->
       <div class="col-md-6 mb-4">
         <div class="row">
           <div class="col-3">
@@ -207,14 +218,16 @@
             </div>
           </div>
           <div class="col-9">
-            <h5 class="text-left mb-3">Agnostic to IoT Backend</h5>
-            <p class="text-left">Empower your IoT devices with seamless connectivity and communication capabilities. Develop efficient and secure microcontroller and LPWAN device solutions, including firmware, drivers, networking, and OTA updates.</p>
+            <h5 class="text-left mb-3">IoT Backend Agnosticism</h5>
+            <p class="text-left">Unlock seamless connectivity and communication for your IoT devices while retaining your existing IoT messaging backends. Plus, rest assured that your IoT messages never leave your private cloud—AM:DM's on-premise component, aProxy, ensures that IoT data remains within your secure environment, enhancing data privacy and security.</p>
           </div>
         </div>
       </div>
-      <!-- End of fifth benefit - Agnostic to IoT Backend -->
+      <!-- End of IoT Backend Agnosticism -->
 
-      <!-- OTA -->
+
+
+      <!-- Over-the-Air (OTA) Updates -->
       <div class="col-md-6 mb-4">
         <div class="row">
           <div class="col-3">
@@ -223,14 +236,17 @@
             </div>
           </div>
           <div class="col-9">
-            <h5 class="text-left mb-3">OTA Udates</h5>
-            <p class="text-left">Accelerate your IoT product development with comprehensive tools, libraries, and SDKs. Streamline development tasks, access pre-built components, and leverage resources to create innovative and efficient IoT solutions.</p>
+            <h5 class="text-left mb-3">Over-the-Air (OTA) Updates</h5>
+            <p class="text-left">AM:DM streamlines the process of managing and deploying OTA updates for your IoT devices. This includes firmware updates, security patches, and feature enhancements, ensuring that your devices remain up-to-date and secure without the need for physical interventions.</p>
           </div>
         </div>
       </div>
-      <!-- End of OTA -->
+      <!-- End of Over-the-Air (OTA) Updates -->
 
-      <!-- Integration -->
+
+
+
+      <!-- Integration with 3rd Party Systems -->
       <div class="col-md-6 mb-4">
         <div class="row">
           <div class="col-3">
@@ -239,14 +255,17 @@
             </div>
           </div>
           <div class="col-9">
-            <h5 class="text-left mb-3">Integration With 3rd Party Systems</h5>
-            <p class="text-left">Accelerate your IoT product development with comprehensive tools, libraries, and SDKs. Streamline development tasks, access pre-built components, and leverage resources to create innovative and efficient IoT solutions.</p>
+            <h5 class="text-left mb-3">Integration with 3rd Party Systems</h5>
+            <p class="text-left">AM:DM provides seamless integration capabilities with a variety of third-party systems, including LDAP, Active Directory, custom identity databases, and more. This empowers you to effortlessly connect AM:DM with your existing infrastructure, ensuring a unified and cohesive IoT ecosystem while leveraging your preferred authentication and authorization systems.</p>
           </div>
         </div>
       </div>
-      <!-- End of Integration -->
+      <!-- End of Integration with 3rd Party Systems -->
 
-      <!-- Tools, Libraries, and SDKs -->
+
+
+
+      <!-- Developer Tools and Resources -->
       <div class="col-md-6 mb-4">
         <div class="row">
           <div class="col-3">
@@ -255,12 +274,12 @@
             </div>
           </div>
           <div class="col-9">
-            <h5 class="text-left mb-3">Tools, Libraries, and SDKs</h5>
-            <p class="text-left">Accelerate your IoT product development with comprehensive tools, libraries, and SDKs. Streamline development tasks, access pre-built components, and leverage resources to create innovative and efficient IoT solutions.</p>
+            <h5 class="text-left mb-3">Developer Tools and Resources</h5>
+            <p class="text-left">Accelerate IoT product development with a rich set of developer tools, libraries, and SDKs. Simplify tasks, access pre-built components, and leverage resources to create efficient and innovative IoT solutions.</p>
           </div>
         </div>
       </div>
-      <!-- End of Tools, Libraries, and SDKs -->
+      <!-- End of Developer Tools and Resources -->
     </div>
   </div>
 </section>
@@ -272,42 +291,52 @@
 
 
 
-<!-- amProxy section -->
-<section id="amdm" class="py-5" style="font-size: 21px; background-color: #D8EFD3;">
+
+
+<!-- aProxy section -->
+<section id="aproxy" class="py-5" style="font-size: 21px; background-color: #D8EFD3;">
   <div class="container">
-      <div class="row mt-5">
-          <div class="col-md-6 d-flex align-items-center justify-content-center mt-5">
-              <img src="img/amProxy-drawing.png" alt="AM:DM - Secure Device Management" class="img-fluid">
-          </div>
-          <div class="col-md-6 mt-5">
-              <h1>amProxy - Secure IoT Proxy</h1>
-              <p>Empower your IoT ecosystem with AM:DM, a comprehensive Secure Device Management Software as a Service (SaaS) platform. Seamlessly connect and manage a diverse array of devices and applications across cloud and edge environments with unparalleled ease and efficiency. At the heart of AM:DM lies a robust framework that ensures the utmost in device identity, authorization, and authentication security, granting you peace of mind and full control over your IoT infrastructure.</p>
-              <div class="mt-4">
-                  <a href="#" class="btn btn-success d-inline-block">Learn More</a>
-              </div>
-          </div>
+    <div class="row mb-5">
+      <div class="col-md-6 d-flex align-items-center justify-content-center mt-5">
+        <img src="img/amProxy-drawing.png" alt="aProxy" class="img-fluid">
       </div>
+      <div class="col-md-6 mt-5">
+        <h1>aProxy - Secure IoT Proxy</h1>
+        <p>aProxy is the backbone of your secure IoT infrastructure. It's an open-source, lightweight, and highly transparent component of AM:DM that acts as a Secure IoT Proxy. With aProxy, you gain unparalleled control and assurance over your IoT ecosystem.</p>
+        <p>Being open-source, aProxy allows customers to review its source code, ensuring complete transparency and security. This transparency instills confidence, as you can analyze and verify its functionality, making it a perfect fit for on-premise installations within your private clouds. aProxy is the key to securing your IoT backend while enforcing authentication and authorization checks with zero data exposure outside your private infrastructure.</p>
+        <div class="mt-4">
+          <a href="#" class="btn btn-success d-inline-block">Learn More</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
-<!-- End of mProxy section -->
+<!-- End of aProxy section -->
+
+
 
 
 
 <!-- Bootstrap section -->
 <section id="magistrala" class="py-5" style="font-size: 21px; background-color: #B5D3E7;">
   <div class="container">
-      <div class="row mt-5">
-          <div class="col-md-6 mt-5">
-            <h1>Bootstrap - Automated Device Configuration</h1>
-            <p>Elevate your IoT ecosystem with Magistrala - the ultimate IoT messaging platform renowned for its scalability and versatility. Seamlessly bridge a myriad of industrial protocols, ensuring your devices communicate flawlessly. Magistrala empowers real-time event management and offers support for a wide array of databases for efficient message storage. Our platform ensures your IoT communications are not just seamless but also secure, reliable, and future-ready.</p>
-            <div class="mt-4">
-                <a href="#" class="btn btn-primary d-inline-block">Learn More</a>
-            </div>
-          </div>
-          <div class="col-md-6 d-flex align-items-center justify-content-center mt-5">
-              <img src="img/bootstrap-drawing.png" alt="Magistrala IoT Platform" class="img-fluid" style="max-width: 500px;">
-          </div>
+    <div class="row mb-5">
+      <div class="col-md-6 mt-5">
+        <h1>Bootstrap - Automated Device Configuration</h1>
+        <p>Superflux's Bootstrap feature simplifies IoT device configuration by automating the provisioning process and enabling remote configuration. Here's how it works:</p>
+        <ul>
+          <li><strong>Zero-Touch Provisioning:</strong> Devices are added to the network with minimal manual intervention. They securely connect to the network and obtain initial configurations automatically.</li>
+          <li><strong>Remote Configuration:</strong> Superflux allows for the remote configuration of IoT devices, eliminating the need for on-site manual setups. Devices can be configured and updated from a central location, ensuring flexibility and efficiency.</li>
+          <li><strong>Bootstrap Server:</strong> The Bootstrap server in Superflux is modeled after the OMA LwM2M standard, ensuring compatibility and security. It facilitates secure device registration and initial setup, guaranteeing a robust foundation for device deployment.</li>
+        </ul>
+        <div class="mt-4">
+          <a href="#" class="btn btn-primary d-inline-block">Learn More</a>
+        </div>
       </div>
+      <div class="col-md-6 d-flex align-items-center justify-content-center mt-5">
+        <img src="img/bootstrap-drawing.png" alt="Superflux IoT Platform" class="img-fluid">
+      </div>
+    </div>
   </div>
 </section>
 <!-- End of Bootstrap section -->
@@ -315,21 +344,26 @@
 
 
 
+
+
+
 <!-- Integration section -->
-<section id="amdm" class="py-5" style="font-size: 21px; background-color: #D8EFD3;">
+<section id="integration" class="py-5" style="font-size: 21px; background-color: #D8EFD3;">
   <div class="container">
-      <div class="row mt-5">
-          <div class="col-md-6 d-flex align-items-center justify-content-center mt-5">
-              <img src="img/integration.png" alt="AM:DM - Secure Device Management" class="img-fluid">
-          </div>
-          <div class="col-md-6 mt-5">
-              <h1>Integration With 3rd Party Systems</h1>
-              <p>Empower your IoT ecosystem with AM:DM, a comprehensive Secure Device Management Software as a Service (SaaS) platform. Seamlessly connect and manage a diverse array of devices and applications across cloud and edge environments with unparalleled ease and efficiency. At the heart of AM:DM lies a robust framework that ensures the utmost in device identity, authorization, and authentication security, granting you peace of mind and full control over your IoT infrastructure.</p>
-              <div class="mt-4">
-                  <a href="#" class="btn btn-success d-inline-block">Learn More</a>
-              </div>
-          </div>
+    <div class="row mb-5">
+      <div class="col-md-6 d-flex align-items-center justify-content-center mt-5">
+        <img src="img/integration.png" alt="Integration with 3rd Party Services" class="img-fluid">
       </div>
+      <div class="col-md-6 mt-5">
+        <h1>Integration With 3rd Party Systems</h1>
+        <p>AM:DM offers comprehensive integration capabilities through APIs, SDKs, and client libraries, enabling seamless connectivity with various third-party systems. Whether you use LDAP, Active Directory, custom identity databases, or other services, AM:DM simplifies the integration process.</p>
+        <p>Our API integration allows you to programmatically access and interact with AM:DM's features, ensuring your IoT ecosystem remains cohesive and synchronized with your existing infrastructure. The available SDKs and client libraries streamline development tasks, making it easier to connect and communicate with third-party systems.</p>
+        <p>This robust integration capability empowers you to create a unified IoT ecosystem while leveraging your preferred authentication and authorization systems. It promotes flexibility and interoperability, allowing you to tailor AM:DM to your specific needs.</p>
+        <div class="mt-4">
+          <a href="#" class="btn btn-success d-inline-block">Learn More</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 <!-- End of Integration section -->
@@ -339,21 +373,27 @@
 
 
 
+
+
+
 <!-- SDK section -->
-<section id="magistrala" class="py-5" style="font-size: 21px; background-color: #B5D3E7;">
+<section id="sdk" class="py-5" style="font-size: 21px; background-color: #B5D3E7;">
   <div class="container">
-      <div class="row mt-5">
-          <div class="col-md-6 mt-5">
-            <h1>Solution Blueprints, Documentation, SDK and Tools</h1>
-            <p>Elevate your IoT ecosystem with Magistrala - the ultimate IoT messaging platform renowned for its scalability and versatility. Seamlessly bridge a myriad of industrial protocols, ensuring your devices communicate flawlessly. Magistrala empowers real-time event management and offers support for a wide array of databases for efficient message storage. Our platform ensures your IoT communications are not just seamless but also secure, reliable, and future-ready.</p>
-            <div class="mt-4">
-                <a href="#" class="btn btn-primary d-inline-block">Learn More</a>
-            </div>
-          </div>
-          <div class="col-md-6 d-flex align-items-center justify-content-center mt-5">
-              <img src="img/docs.png" alt="Magistrala IoT Platform">
-          </div>
+    <div class="row mb-5">
+      <div class="col-md-6 mt-5">
+        <h1>Open-Source SDKs, Libraries, Tools, Documentation, and Architectural Blueprints</h1>
+        <p>AM:DM empowers your IoT ecosystem with a rich suite of open-source resources designed to simplify IoT development. Our offerings include Software Development Kits (SDKs), libraries, tools, comprehensive documentation, and architectural blueprints.</p>
+        <p>Our SDKs provide developers with pre-built components and APIs to expedite IoT application development. The libraries offer essential functionalities to enhance your IoT solutions. Our tools streamline development tasks, while the documentation serves as a valuable reference for integrating and using AM:DM effectively.</p>
+        <p>Architectural blueprints provide guidance for building complex IoT solutions using AM:DM device management and Superflux IoT multi-protocol messaging. They offer insights into best practices and proven approaches to maximize the potential of our platforms.</p>
+        <p>AM:DM's open-source approach ensures that you have the freedom and flexibility to customize, extend, and optimize your IoT ecosystem with confidence. Our resources empower you to create secure, reliable, and scalable IoT solutions that are future-ready.</p>
+        <div class="mt-4">
+          <a href="#" class="btn btn-primary d-inline-block">Learn More</a>
+        </div>
       </div>
+      <div class="col-md-6 d-flex align-items-center justify-content-center mt-5">
+        <img src="img/docs.png" alt="SDK" class="img-fluid-large">
+      </div>
+    </div>
   </div>
 </section>
 <!-- End of SDK section -->
@@ -361,10 +401,11 @@
 
 
 
+
 <!-- Developers section -->
 <section class="py-lg-5 py-md-4 py-sm-3 py-2" style="background-color: #B5D3E7;">
   <div class="container">
-    <div class="row mt-5">
+    <div class="row">
       <div class="col text-center">
         <h2 class="mb-5">Developers Use AM:DM For:</h2>
       </div>
@@ -374,21 +415,21 @@
         <div class="d-flex flex-column align-items-center">
           <i class="fas fa-industry fa-3x mb-3"></i>
           <h3 class="text-center">Industrial IoT</h3>
-          <p class="text-left text-justify">Magistrala IoT platform brings a sophisticated IoT messaging system, capable of bridging various IoT protocols: MQTT, CoAP, HTTP, and WebSocket. Messaging is done through the clustered, fault-tolerant, highly-available, and scalable servers for the highest performance and reliability.</p>
+          <p class="text-left text-justify">Superflux IoT platform brings a sophisticated IoT messaging system, capable of bridging various IoT protocols: MQTT, CoAP, HTTP, and WebSocket. Messaging is done through the clustered, fault-tolerant, highly-available, and scalable servers for the highest performance and reliability.</p>
         </div>
       </div>
       <div class="col">
         <div class="d-flex flex-column align-items-center">
           <i class="fas fa-building fa-3x mb-3"></i>
           <h3 class="text-center">Enterprise IoT</h3>
-          <p class="text-left text-justify">Magistrala's scalable microservice architecture allows for the flexible development and deployment of IoT solutions. Easily manage and scale individual microservices to meet your specific requirements, optimizing resource utilization and enhancing system performance.</p>
+          <p class="text-left text-justify">Superflux's scalable microservice architecture allows for the flexible development and deployment of IoT solutions. Easily manage and scale individual microservices to meet your specific requirements, optimizing resource utilization and enhancing system performance.</p>
         </div>
       </div>
       <div class="col">
         <div class="d-flex flex-column align-items-center">
           <i class="fas fa-laptop-code fa-3x mb-3"></i>
           <h3 class="text-center">Consumer IoT</h3>
-          <p class="text-left text-justify">Magistrala embraces open-source principles, providing you with a comprehensive IoT platform under the Apache-2.0 License. Benefit from transparency, flexibility, and a vibrant community while building your IoT solutions on a trusted and permissively licensed foundation.</p>
+          <p class="text-left text-justify">Superflux embraces open-source principles, providing you with a comprehensive IoT platform under the Apache-2.0 License. Benefit from transparency, flexibility, and a vibrant community while building your IoT solutions on a trusted and permissively licensed foundation.</p>
         </div>
       </div>
     </div>
