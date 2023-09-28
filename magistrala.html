@@ -23,8 +23,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="products.html" style="color: black;">Products</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+            Products
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+            <li><a class="dropdown-item" href="amdm.html">AM:DM</a></li>
+            <li><a class="dropdown-item" href="#">Magistrala</a></li>
+            <li><a class="dropdown-item" href="products.html">All Products</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="solutions.html" style="color: black;">Solutions</a>
@@ -317,6 +324,14 @@
 
   
     </div>
+
+    <div class="row mb-5">
+      <div class="col-md-12 mt-4 text-center">
+          <p style="font-size: 24px;">Downolad Magistrala IoT Platform:</p>
+          <a href="https://github.com/absmach/magistrala" class="btn btn-warning btn-lg mt-3" target="_blank">Go to  Magistrala GitHub</a>
+      </div>
+  </div>
+
   </div>
 </section>
 <!-- End of Features section -->

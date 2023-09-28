@@ -23,8 +23,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="products.html" style="color: black;">Products</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: black;">
+            Products
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+            <li><a class="dropdown-item" href="#">AM:DM</a></li>
+            <li><a class="dropdown-item" href="magistrala.html">Magistrala</a></li>
+            <li><a class="dropdown-item" href="products.html">All Products</a></li>
+          </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="solutions.html" style="color: black;">Solutions</a>
@@ -296,7 +303,7 @@
 <!-- aProxy section -->
 <section id="aproxy" class="py-5" style="font-size: 21px; background-color: #D8EFD3;">
   <div class="container">
-    <div class="row mb-5">
+    <div class="row mb-3">
       <div class="col-md-6 d-flex align-items-center justify-content-center mt-5">
         <img src="img/amProxy-drawing.png" alt="aProxy" class="img-fluid">
       </div>
@@ -304,9 +311,6 @@
         <h1>aProxy - Secure IoT Proxy</h1>
         <p>aProxy is the backbone of your secure IoT infrastructure. It's an open-source, lightweight, and highly transparent component of AM:DM that acts as a Secure IoT Proxy. With aProxy, you gain unparalleled control and assurance over your IoT ecosystem.</p>
         <p>Being open-source, aProxy allows customers to review its source code, ensuring complete transparency and security. This transparency instills confidence, as you can analyze and verify its functionality, making it a perfect fit for on-premise installations within your private clouds. aProxy is the key to securing your IoT backend while enforcing authentication and authorization checks with zero data exposure outside your private infrastructure.</p>
-        <div class="mt-4">
-          <a href="#" class="btn btn-success d-inline-block">Learn More</a>
-        </div>
       </div>
     </div>
   </div>
@@ -318,10 +322,10 @@
 
 
 <!-- Bootstrap section -->
-<section id="magistrala" class="py-5" style="font-size: 21px; background-color: #B5D3E7;">
+<section id="magistrala" class="py-5" style="font-size: 21px; background-color: #D8EFD3;">
   <div class="container">
-    <div class="row mb-5">
-      <div class="col-md-6 mt-5">
+    <div class="row mb-3">
+      <div class="col-md-6">
         <h1>Bootstrap - Automated Device Configuration</h1>
         <p>Magistrala's Bootstrap feature simplifies IoT device configuration by automating the provisioning process and enabling remote configuration. Here's how it works:</p>
         <ul>
@@ -329,11 +333,8 @@
           <li><strong>Remote Configuration:</strong> Magistrala allows for the remote configuration of IoT devices, eliminating the need for on-site manual setups. Devices can be configured and updated from a central location, ensuring flexibility and efficiency.</li>
           <li><strong>Bootstrap Server:</strong> The Bootstrap server in Magistrala is modeled after the OMA LwM2M standard, ensuring compatibility and security. It facilitates secure device registration and initial setup, guaranteeing a robust foundation for device deployment.</li>
         </ul>
-        <div class="mt-4">
-          <a href="#" class="btn btn-primary d-inline-block">Learn More</a>
-        </div>
       </div>
-      <div class="col-md-6 d-flex align-items-center justify-content-center mt-5">
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
         <img src="img/bootstrap-drawing.png" alt="Magistrala IoT Platform" class="img-fluid">
       </div>
     </div>
@@ -350,18 +351,15 @@
 <!-- Integration section -->
 <section id="integration" class="py-5" style="font-size: 21px; background-color: #D8EFD3;">
   <div class="container">
-    <div class="row mb-5">
-      <div class="col-md-6 d-flex align-items-center justify-content-center mt-5">
+    <div class="row mb-3">
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
         <img src="img/integration.png" alt="Integration with 3rd Party Services" class="img-fluid">
       </div>
-      <div class="col-md-6 mt-5">
+      <div class="col-md-6">
         <h1>Integration With 3rd Party Systems</h1>
         <p>AM:DM offers comprehensive integration capabilities through APIs, SDKs, and client libraries, enabling seamless connectivity with various third-party systems. Whether you use LDAP, Active Directory, custom identity databases, or other services, AM:DM simplifies the integration process.</p>
         <p>Our API integration allows you to programmatically access and interact with AM:DM's features, ensuring your IoT ecosystem remains cohesive and synchronized with your existing infrastructure. The available SDKs and client libraries streamline development tasks, making it easier to connect and communicate with third-party systems.</p>
         <p>This robust integration capability empowers you to create a unified IoT ecosystem while leveraging your preferred authentication and authorization systems. It promotes flexibility and interoperability, allowing you to tailor AM:DM to your specific needs.</p>
-        <div class="mt-4">
-          <a href="#" class="btn btn-success d-inline-block">Learn More</a>
-        </div>
       </div>
     </div>
   </div>
@@ -377,20 +375,17 @@
 
 
 <!-- SDK section -->
-<section id="sdk" class="py-5" style="font-size: 21px; background-color: #B5D3E7;">
+<section id="sdk" class="py-5" style="font-size: 21px; background-color: #D8EFD3;">
   <div class="container">
-    <div class="row mb-5">
-      <div class="col-md-6 mt-5">
+    <div class="row mb-3">
+      <div class="col-md-6">
         <h1>Open-Source SDKs, Libraries, Tools, Documentation, and Architectural Blueprints</h1>
         <p>AM:DM empowers your IoT ecosystem with a rich suite of open-source resources designed to simplify IoT development. Our offerings include Software Development Kits (SDKs), libraries, tools, comprehensive documentation, and architectural blueprints.</p>
         <p>Our SDKs provide developers with pre-built components and APIs to expedite IoT application development. The libraries offer essential functionalities to enhance your IoT solutions. Our tools streamline development tasks, while the documentation serves as a valuable reference for integrating and using AM:DM effectively.</p>
         <p>Architectural blueprints provide guidance for building complex IoT solutions using AM:DM device management and Magistrala IoT multi-protocol messaging. They offer insights into best practices and proven approaches to maximize the potential of our platforms.</p>
         <p>AM:DM's open-source approach ensures that you have the freedom and flexibility to customize, extend, and optimize your IoT ecosystem with confidence. Our resources empower you to create secure, reliable, and scalable IoT solutions that are future-ready.</p>
-        <div class="mt-4">
-          <a href="#" class="btn btn-primary d-inline-block">Learn More</a>
-        </div>
       </div>
-      <div class="col-md-6 d-flex align-items-center justify-content-center mt-5">
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
         <img src="img/docs.png" alt="SDK" class="img-fluid-large">
       </div>
     </div>
@@ -405,7 +400,7 @@
 <!-- Developers section -->
 <section class="py-lg-5 py-md-4 py-sm-3 py-2" style="background-color: #B5D3E7;">
   <div class="container">
-    <div class="row">
+    <div class="row mt-5">
       <div class="col text-center">
         <h2 class="mb-5">Developers Use AM:DM For:</h2>
       </div>
@@ -413,29 +408,31 @@
     <div class="row mt-5">
       <div class="col">
         <div class="d-flex flex-column align-items-center">
-          <i class="fas fa-industry fa-3x mb-3"></i>
-          <h3 class="text-center">Industrial IoT</h3>
-          <p class="text-left text-justify">Magistrala IoT platform brings a sophisticated IoT messaging system, capable of bridging various IoT protocols: MQTT, CoAP, HTTP, and WebSocket. Messaging is done through the clustered, fault-tolerant, highly-available, and scalable servers for the highest performance and reliability.</p>
+          <i class="fas fa-microchip fa-3x mb-3"></i>
+          <h3 class="text-center">IoT Sensor Management</h3>
+          <p class="text-left text-justify">Manage IoT sensors with ease using AM:DM. Monitor sensor data, set alerts, and optimize sensor deployments for your IoT applications.</p>
         </div>
       </div>
       <div class="col">
         <div class="d-flex flex-column align-items-center">
-          <i class="fas fa-building fa-3x mb-3"></i>
-          <h3 class="text-center">Enterprise IoT</h3>
-          <p class="text-left text-justify">Magistrala's scalable microservice architecture allows for the flexible development and deployment of IoT solutions. Easily manage and scale individual microservices to meet your specific requirements, optimizing resource utilization and enhancing system performance.</p>
+          <i class="fas fa-network-wired fa-3x mb-3"></i>
+          <h3 class="text-center">Edge Gateway Management</h3>
+          <p class="text-left text-justify">Efficiently manage edge gateways with AM:DM. Configure, monitor, and secure gateways to ensure seamless data flow between IoT devices and the cloud.</p>
         </div>
       </div>
       <div class="col">
         <div class="d-flex flex-column align-items-center">
-          <i class="fas fa-laptop-code fa-3x mb-3"></i>
-          <h3 class="text-center">Consumer IoT</h3>
-          <p class="text-left text-justify">Magistrala embraces open-source principles, providing you with a comprehensive IoT platform under the Apache-2.0 License. Benefit from transparency, flexibility, and a vibrant community while building your IoT solutions on a trusted and permissively licensed foundation.</p>
+          <i class="fas fa-shield-alt fa-3x mb-3"></i>
+          <h3 class="text-center">Secure IoT Applications</h3>
+          <p class="text-left text-justify">Build and deploy secure IoT applications with AM:DM. Leverage our robust security features to protect your IoT ecosystem and user data.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 <!-- End of Developers section -->
+
+
 
 
 
