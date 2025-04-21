@@ -28,13 +28,12 @@
             Products
           </a>
           <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-            <li><a class="dropdown-item" href="amdm.html">AM:DM</a></li>
             <li><a class="dropdown-item" href="magistrala.html">Magistrala</a></li>
+            <li><a class="dropdown-item" href="supermq.html">SuperMQ</a></li>
+            <li><a class="dropdown-item" href="propeller.html">Propeller</a></li>
+            <li><a class="dropdown-item" href="rex.html">Rex</a></li>
             <li><a class="dropdown-item" href="#">All Products</a></li>
           </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="solutions.html" style="color: black;">Solutions</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="services.html" style="color: black;">Services</a>
@@ -73,11 +72,8 @@
   <div class="container">
     <div class="row mt-5">
       <div class="col">
-        <h1>AM Products for the Cloud-Edge Continuum</h1>
-        <p>Abstract Machines creates a platform to connect and manage devices and applications across the cloud and edge with ease.
-          Fine-grained access control with a sophisticated policy and identity management system helps securely connect devices over
-          constrained IoT protocols - like MQTT or CoAP.
-          Embrace the future of IoT technology confidently, and simplify your IoT device management with our cutting-edge platform.</p>
+        <h1>Abstract Machines Products for the Cloud–Edge Continuum</h1>
+        <p>Abstract Machines develops open-source infrastructure for IoT and AI — enabling device-to-cloud connectivity, secure workload orchestration, and real-time data processing. From microcontrollers to the cloud, our tools—Magistrala, SuperMQ, Propeller, and Rex—power the entire spectrum of connected intelligence.</p>
       </div>
     </div>
   </div>
@@ -86,45 +82,82 @@
 
 
 
+
+
 <!-- Cards section -->
 <section id="cards" class="py-5 mb-5">
   <div class="container">
-    <!-- Cards will stack on top of each other on small screens -->
-    <div class="row">
-      <div class="col-md-6 mb-4">
-        <div class="card">
-          <div class="card-img-top" style="background: radial-gradient(circle at 60% 40%, #0f940d 25%, transparent 26%),radial-gradient(circle at 40% 60%, #0f940d80 25%, transparent 26%);
-            background-size: 3em 3em;
-            background-color: #ffffff;
-            opacity: 1; min-height: 150px; background-color: #D8EFD3;"></div>
-          <div class="card-body">
-            <h3 class="card-title">AM:DM - Secure Device Management</h3>
-            <p class="card-text">AM:DM enables secure device management in the cloud-edge continuum. Create, group, share, and monitor devices with simple APIs. It offers sophisticated identity management, certificate, and key management. Ensure IoT ecosystem security with robust data protection and access control. Implement encryption, authentication, and fine-grained access policies.</p>
-            <a href="amdm.html" class="btn btn-success btn-lg btn-block mt-3 w-100">Go to AM:DM</a>
-          </div>
-        </div>
-      </div>
+    <div class="row gy-5 gx-5">
 
-      <div class="col-md-6 mb-4">
-        <div class="card">
+      <!-- Magistrala Card -->
+      <div class="col-lg-6 col-xl-6">
+        <div class="card h-100 shadow-sm">
           <div class="card-img-top" style="background: radial-gradient(#38a2be 15%, transparent 16%), linear-gradient(45deg, transparent 49%, #38a2be 49% 51%, transparent 51%), linear-gradient(-45deg, transparent 49%, #38a2be 49% 51%, transparent 51%);
             background-size: 3em 3em;
-            background-color: #ffffff;
-            opacity: 1; min-height: 150px; background-color: #B5D3E7;"></div>
+            background-color: #B5D3E7; min-height: 150px;"></div>
           <div class="card-body">
-            <h3 class="card-title">Magistrala - Scalable IoT Messaging</h3>
-            <p class="card-text">Magistrala IoT platform offers scalable IoT messaging, providing seamless integration for MQTT, CoAP, HTTP, and WebSocket protocols. It leverages clustered, fault-tolerant, and highly-available servers to ensure dependable performance. Elevate your IoT infrastructure with real-time event management, support for various industrial protocols, and efficient message storage solutions.</p>
+            <h3 class="card-title">Magistrala – Complete IoT Platform</h3>
+            <p class="card-text">Magistrala offers full-stack IoT capabilities—from device identity to data integration. With fine-grained access control, multi-tenant domains, and secure APIs, it’s your go-to platform for managing connected infrastructure at scale.</p>
             <a href="magistrala.html" class="btn btn-primary btn-lg btn-block mt-3 w-100">Go to Magistrala</a>
           </div>
         </div>
       </div>
+
+      <!-- SuperMQ Card -->
+      <div class="col-lg-6 col-xl-6">
+        <div class="card h-100 shadow-sm">
+          <div class="card-img-top" style="background: radial-gradient(circle at 60% 40%, #e88e0c 25%, transparent 26%), radial-gradient(circle at 40% 60%, #e88e0c80 25%, transparent 26%);
+            background-size: 3em 3em;
+            background-color: #fff9eb;
+            min-height: 150px;"></div>
+          <div class="card-body">
+            <h3 class="card-title">SuperMQ – Lightweight IoT Messaging</h3>
+            <p class="card-text">SuperMQ is a low-footprint, high-performance messaging engine optimized for IoT. It supports MQTT, CoAP, WebSocket, and more—ensuring fast, reliable communication from devices to cloud or edge systems.</p>
+            <a href="supermq.html" class="btn btn-warning btn-lg btn-block mt-3 w-100">Go to SuperMQ</a>
+          </div>
+        </div>
+      </div>
+
+<!-- Propeller Card -->
+<div class="col-lg-6 col-xl-6">
+  <div class="card h-100 shadow-sm">
+    <div class="card-img-top" style="background:
+      repeating-linear-gradient(-45deg, #dbeafe, #dbeafe 10px, #bfdbfe 10px, #bfdbfe 20px);
+      background-color: #e0f2fe;
+      background-size: 2em 2em;
+      min-height: 150px;">
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Propeller – Serverless Orchestration</h3>
+      <p class="card-text">Propeller enables secure orchestration of WebAssembly functions across edge and cloud. Deploy serverless workloads on demand, with remote attestation, lightweight lifecycle control, and runtime portability from cloud VMs to microcontrollers. Ideal for modular, policy-driven AI and compute automation.</p>
+      <a href="propeller.html" class="btn btn-purple btn-lg btn-block mt-3 w-100" style="background-color: #5a4ae3; color: white;">Go to Propeller</a>
+    </div>
+  </div>
+</div>
+
+<!-- Rex Card -->
+<div class="col-lg-6 col-xl-6">
+  <div class="card h-100 shadow-sm">
+    <div class="card-img-top" style="background:
+      repeating-linear-gradient(45deg, #b5ead7, #b5ead7 10px, #d8f3dc 10px, #d8f3dc 20px);
+      background-color: #d8f3dc;
+      background-size: 2em 2em;
+      min-height: 150px;">
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Rex – Real-Time Rules Engine</h3>
+      <p class="card-text">Rex is a fast and reliable rules engine designed for distributed environments. It evaluates and triggers actions based on real-time data streams, telemetry, or events. Ideal for edge analytics, system automation, and flow-based control in IoT, Rex scales from embedded nodes to full cloud clusters.</p>
+      <a href="rex.html" class="btn btn-success btn-lg btn-block mt-3 w-100">Go to Rex</a>
+    </div>
+  </div>
+</div>
+
+
+
     </div>
   </div>
 </section>
 <!-- End of Cards section -->
-
-
-
 
 
 
