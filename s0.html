@@ -1,10 +1,10 @@
-<!-- propeller.html -->
+<!-- s0.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Propeller - Abstract Machines</title>
+  <title>S0 - Low Power Gateway</title>
   <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -69,74 +69,59 @@
     </div>
   </div>
 </nav>
-
-
+  <!-- End of Navbar -->
 
   <!-- Hero Section -->
   <section id="header" class="py-5 mt-5" style="font-size: 21px; min-height: 100vh; margin: 0;">
     <div class="container">
       <div class="row mt-5">
         <div class="col-md-6 mt-5">
-          <h1>Propeller</h1>
-          <p>Propeller is a WebAssembly (Wasm) orchestrator and rule engine built atop SuperMQ. It enables dynamic, event-driven logic execution across distributed IoT and edge environments, allowing developers to deploy and manage Wasm modules seamlessly.</p>
-          <div class="mt-4">
-            <a href="https://github.com/absmach/propeller" class="btn btn-warning d-inline-block" target="_blank">Download Propeller</a>
-          </div>
+          <h1>S0 – Low Power Gateway</h1>
+          <p>S0 is a low-power IoT gateway based on RISC-V architecture, designed for constrained environments. It provides efficient connectivity and processing for IoT devices with minimal energy consumption, making it ideal for edge deployments.</p>
+          <a href="https://github.com/absmach/s0" class="btn btn-warning d-inline-block" target="_blank">Learn More</a>
         </div>
         <div class="col-md-6 mt-5">
           <div class="d-flex align-items-center justify-content-center">
-            <img src="img/patterns/propeller.png" alt="Propeller banner" class="img-fluid-large">
+            <img src="img/patterns/s0.png" alt="S0 banner" class="img-fluid-large">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- What is Propeller -->
+  <!-- What is S0 -->
   <section class="py-5" style="font-size: 21px; background-color: #F5F5F5;">
     <div class="container">
       <div class="row">
         <div class="col-md-6 d-flex align-items-center justify-content-center">
-          <img src="img/propeller-concept.png" alt="Propeller Concept" class="img-fluid">
+          <img src="img/rex-concept.png" alt="Rex Concept" class="img-fluid">
         </div>
         <div class="col-md-6 mt-5">
-          <h1>What is Propeller</h1>
-          <p>Propeller serves as the execution engine for Abstract Machines, enabling real-time, event-driven processing through WebAssembly modules. It allows developers to write portable, secure, and high-performance logic that can be deployed across diverse environments.</p>
-          <p>By leveraging SuperMQ's messaging capabilities, Propeller ensures that Wasm modules can react to events, process data, and enforce rules efficiently, making it ideal for complex IoT and edge computing scenarios.</p>
-          <p>Propeller is open-source and designed for extensibility, supporting various use cases from simple data transformations to complex decision-making workflows.</p>
+          <h1>What is S0</h1>
+          <p>S0 is optimized for low-power IoT applications, offering efficient connectivity and processing capabilities. It is ideal for edge deployments where energy efficiency is critical.</p>
+          <p>With its compact design and RISC-V architecture, S0 enables seamless integration with IoT devices, ensuring reliable performance in constrained environments.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Features -->
-  <section class="py-5" style="background-color: #f5e7b2; color: black;">
+  <section class="py-5" style="background-color: #e8f5e9; color: black;">
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center mt-5 mb-5">
-          <h2>Propeller Features</h2>
+          <h2>S0 Features</h2>
         </div>
       </div>
       <div class="row">
         <div class="col-md-6 mb-4">
           <div class="row">
             <div class="col-3 text-center">
-              <i class="fas fa-cogs fa-2x mb-3"></i>
+              <i class="fas fa-battery-half fa-2x mb-3"></i>
             </div>
             <div class="col-9">
-              <h5 class="text-left mb-3">Wasm Module Orchestration</h5>
-              <p class="text-left">Deploy and manage WebAssembly modules dynamically, enabling portable logic execution across devices and services.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 mb-4">
-          <div class="row">
-            <div class="col-3 text-center">
-              <i class="fas fa-bolt fa-2x mb-3"></i>
-            </div>
-            <div class="col-9">
-              <h5 class="text-left mb-3">Event-Driven Execution</h5>
-              <p class="text-left">Trigger Wasm execution in response to SuperMQ events, enabling responsive and low-latency edge intelligence.</p>
+              <h5 class="text-left mb-3">Energy Efficiency</h5>
+              <p class="text-left">Designed for low-power environments, S0 minimizes energy consumption while maintaining performance.</p>
             </div>
           </div>
         </div>
@@ -146,41 +131,30 @@
               <i class="fas fa-network-wired fa-2x mb-3"></i>
             </div>
             <div class="col-9">
-              <h5 class="text-left mb-3">Seamless SuperMQ Integration</h5>
-              <p class="text-left">Built to work hand-in-hand with SuperMQ for ultra-fast message-driven orchestration.</p>
+              <h5 class="text-left mb-3">IoT Connectivity</h5>
+              <p class="text-left">Provides seamless connectivity for IoT devices, ensuring reliable communication in constrained environments.</p>
             </div>
           </div>
         </div>
         <div class="col-md-6 mb-4">
           <div class="row">
             <div class="col-3 text-center">
-              <i class="fas fa-shield-alt fa-2x mb-3"></i>
+              <i class="fas fa-microchip fa-2x mb-3"></i>
             </div>
             <div class="col-9">
-              <h5 class="text-left mb-3">Sandboxed & Secure</h5>
-              <p class="text-left">Propeller runs each Wasm module in isolation, offering strong safety and deterministic execution guarantees.</p>
+              <h5 class="text-left mb-3">RISC-V Architecture</h5>
+              <p class="text-left">Built on RISC-V architecture for efficient processing and scalability in IoT applications.</p>
             </div>
           </div>
         </div>
         <div class="col-md-6 mb-4">
           <div class="row">
             <div class="col-3 text-center">
-              <i class="fas fa-chart-line fa-2x mb-3"></i>
+              <i class="fas fa-cogs fa-2x mb-3"></i>
             </div>
             <div class="col-9">
-              <h5 class="text-left mb-3">Observability</h5>
-              <p class="text-left">Integrated metrics, logs, and traces for performance monitoring and debugging across Wasm executions.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 mb-4">
-          <div class="row">
-            <div class="col-3 text-center">
-              <i class="fas fa-code-branch fa-2x mb-3"></i>
-            </div>
-            <div class="col-9">
-              <h5 class="text-left mb-3">Open-Source & Extensible</h5>
-              <p class="text-left">Licensed under Apache 2.0. Extend Propeller to meet your needs, or contribute to the growing Wasm community.</p>
+              <h5 class="text-left mb-3">Compact Design</h5>
+              <p class="text-left">Optimized for constrained environments, S0 features a compact design for easy deployment.</p>
             </div>
           </div>
         </div>
@@ -195,7 +169,7 @@
         <div class="col-md-6 offset-md-3 text-center">
           <h2>Subscribe to Our Newsletter</h2>
           <p>Stay updated with the latest news, updates, and announcements.</p>
-          <form action="https://abstractmachines.us13.list-manage.com/subscribe/post?u=e132153c5ae8e4a113f907da5&amp;id=b454573cf1&amp;f_id=008e0ee4f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="mt-4" target="_blank">
+          <form action="https://abstractmachines.us13.list-manage.com/subscribe/post?u=e132153c5ae8e4a113f907da5&amp;id=b454573cf1&amp;f_id=008e0ee4f0" method="post" target="_blank">
             <div class="input-group">
               <input type="email" class="form-control" name="EMAIL" placeholder="Enter your email" aria-label="Email" aria-describedby="subscribe-btn" required>
               <button class="btn btn-primary" type="submit" id="subscribe-btn">Subscribe</button>
