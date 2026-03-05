@@ -219,7 +219,7 @@ This release continues to move the ecosystem forward by improving
 Thanks to everyone who contributed to **Magistrala v0.19.0**:
 
 - Felix — https://github.com/felixgateru
-- Aravindh — https://github.com/arvindh123
+- Arvindh — https://github.com/arvindh123
 - Steve — https://github.com/nyagamunene
 - Ian — https://github.com/ianmuchyri
 - Felister — https://github.com/wambui-pixel
