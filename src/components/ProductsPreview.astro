@@ -1,142 +1,731 @@
 ---
-import ProductPreviewCard from "./ProductPreviewCard.astro";
-
-const featured = {
-  name: "Magistrala",
-  description:
-    "Secure IoT platform for identity, access control, and event-driven connectivity.",
-  href: "https://magistrala.absmach.eu",
-  logoSrc: "/img/logos/Magistrala_logo_web_4_btb.png",
-  logoAlt: "Magistrala logo",
-  logoClass: "dark:invert",
-};
-
-const cards = [
-  {
-    name: "Propeller",
-    description:
-      "WebAssembly orchestration and IoT rule engine for cloud-edge workloads.",
-    href: "https://propeller.absmach.eu",
-    logoSrc: "/img/logos/Propeller_logo_web_4_btw.png",
-    logoAlt: "Propeller logo",
-    logoClass: "dark:invert",
-  },
-  {
-    name: "FluxMQ",
-    description: "Durable low-latency broker for distributed event streams.",
-    href: "https://fluxmq.absmach.eu",
-    fluxLogo: true,
-  },
-  {
-    name: "S0 Gateway",
-    description: "Low-power RISC-V gateway for lightweight edge deployments.",
-    href: "https://hardware.absmach.eu",
-    logoSrc: "/img/s0.png",
-    logoAlt: "S0 Gateway board",
-    logoClass: "!h-16 !w-auto !max-w-none sm:!h-[4.5rem]  md:!h-32 xl:!h-40",
-  },
-  {
-    name: "S1 Gateway",
-    description: "Industrial RISC-V gateway for high-reliability deployments.",
-    href: "https://hardware.absmach.eu",
-    logoSrc: "/img/beagle.png",
-    logoAlt: "S1 Gateway board",
-    logoClass: "!h-16 !w-auto !max-w-none sm:!h-[4.5rem] md:!h-32 xl:!h-36 ",
-  },
-];
-
-const softwareCards = cards.slice(0, 2);
-const hardwareCards = cards.slice(2);
+import { Image } from "astro:assets";
 ---
 
-<section
-  id="products"
-  class="scroll-mt-16 my-4 min-h-[500px] box-border py-5 lg:my-6 lg:h-[calc(100dvh-7rem)] lg:min-h-[44rem] lg:py-6"
->
-  <div
-    class="container-wide flex h-full min-h-full flex-col pt-5 pb-8 lg:pt-7 lg:pb-10"
-  >
-    <div class="flex flex-col gap-2">
+<section id="products" class="products-section scroll-mt-16">
+  <div class="container-wide">
+
+    <!-- Section header -->
+    <div class="products-header">
       <div>
         <p class="section-label">Products</p>
-        <h2 class="section-title mt-0.5">Core platform and hardware</h2>
-        <p class="section-subtitle mt-0.5">
-          Software and edge hardware designed to work as one system.
+        <h2 class="section-title mt-1">Five products. One coherent stack.</h2>
+        <p class="section-subtitle mt-1">
+          Software and RISC-V hardware built for secure, interoperable connectivity.
         </p>
       </div>
+      <a class="button-secondary products-all-link" href="/products/">
+        View all →
+      </a>
     </div>
 
-    <div
-      class="mt-5 flex flex-col gap-2.5 sm:gap-3 md:gap-4 lg:mt-6 lg:flex-1 lg:justify-between lg:gap-[clamp(0.75rem,2dvh,2rem)] xl:gap-[clamp(1rem,2.4dvh,2.5rem)]"
-    >
-      <ProductPreviewCard
-        featured
-        title={featured.name}
-        description={featured.description}
-        href={featured.href}
-        logoSrc={featured.logoSrc}
-        logoAlt={featured.logoAlt}
-        logoClass={featured.logoClass}
-      />
-
-      <div
-        class="grid gap-2.5 sm:gap-3 md:grid-cols-2 md:gap-4 lg:gap-[clamp(0.75rem,1.6dvh,1.5rem)]"
-      >
-        {
-          softwareCards.map((card) =>
-            card.fluxLogo ? (
-              <ProductPreviewCard
-                title={card.name}
-                description={card.description}
-                href={card.href}
-              >
-                <span
-                  slot="logo"
-                  class="text-flux-blue font-fluxmq-logo text-[1.55rem] font-bold leading-none md:text-[1.7rem]"
-                >
-                  Flux
-                </span>
-                <span
-                  slot="logo"
-                  class="text-flux-orange font-fluxmq-logo text-[1.55rem] font-bold leading-none md:text-[1.7rem]"
-                >
-                  MQ
-                </span>
-              </ProductPreviewCard>
-            ) : (
-              <ProductPreviewCard
-                title={card.name}
-                description={card.description}
-                href={card.href}
-                logoSrc={card.logoSrc}
-                logoAlt={card.logoAlt}
-                logoClass={card.logoClass}
-              />
-            ),
-          )
-        }
+    <!-- ── Magistrala: flagship full-width editorial row ─────────── -->
+    <article class="product-featured" data-product="magistrala">
+      <div class="product-featured-copy">
+        <div class="product-meta">
+          <span class="product-category">IoT Platform</span>
+          <span class="product-badge">Flagship</span>
+        </div>
+        <Image
+          src="/img/logos/Magistrala_logo_web_4_btb.png"
+          alt="Magistrala"
+          width={200}
+          height={60}
+          loading="lazy"
+          decoding="async"
+          class="magistrala-logo dark:invert"
+        />
+        <p class="product-desc-lg">
+          Device identity, multi-protocol connectivity, and fine-grained access
+          control — the core platform for IoT deployments at any scale.
+        </p>
+        <ul class="product-features">
+          <li>MQTT, CoAP, HTTP, WebSocket</li>
+          <li>Role-based access &amp; policy engine</li>
+          <li>Time-series data and rule engine</li>
+          <li>Multi-tenant, cloud-native</li>
+        </ul>
+        <a
+          href="https://magistrala.absmach.eu"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="product-cta"
+        >
+          Explore Magistrala ↗
+        </a>
       </div>
 
-      <div
-        class="grid gap-2.5 sm:gap-3 md:grid-cols-2 md:gap-4 lg:gap-[clamp(0.75rem,1.6dvh,1.5rem)]"
-      >
-        {
-          hardwareCards.map((card) => (
-            <ProductPreviewCard
-              title={card.name}
-              description={card.description}
-              href={card.href}
-              logoSrc={card.logoSrc}
-              logoAlt={card.logoAlt}
-              logoClass={card.logoClass}
+      <div class="product-featured-visual">
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <span class="browser-dot browser-dot--r"></span>
+            <span class="browser-dot browser-dot--y"></span>
+            <span class="browser-dot browser-dot--g"></span>
+            <span class="browser-url">magistrala.absmach.eu</span>
+          </div>
+          <Image
+            src="/img/blogs/magistrala-ui-guide/dashboard.png"
+            alt="Magistrala dashboard — device management and analytics interface"
+            width={720}
+            height={450}
+            loading="lazy"
+            decoding="async"
+            class="browser-screenshot"
+          />
+        </div>
+      </div>
+    </article>
+
+    <!-- ── Software products: Propeller + FluxMQ ─────────────────── -->
+    <div class="products-row-2">
+
+      <!-- Propeller -->
+      <article class="product-card-visual" data-product="propeller">
+        <div class="pv-screenshot-wrap">
+          <Image
+            src="/propeller-job.png"
+            alt="Propeller job execution view"
+            width={600}
+            height={340}
+            loading="lazy"
+            decoding="async"
+            class="pv-screenshot-img"
+          />
+        </div>
+        <div class="pv-copy">
+          <span class="product-category">Orchestration</span>
+          <Image
+            src="/img/logos/Propeller_logo_web_4_btw.png"
+            alt="Propeller"
+            width={160}
+            height={50}
+            loading="lazy"
+            decoding="async"
+            class="pv-logo dark:invert"
+          />
+          <p class="product-desc">
+            WebAssembly orchestration and IoT rule engine. Deploy compute to
+            cloud, edge, or microcontrollers — no recompilation needed.
+          </p>
+          <a href="https://propeller.absmach.eu" target="_blank" rel="noopener noreferrer" class="product-cta">
+            Explore Propeller ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- FluxMQ -->
+      <article class="product-card-visual" data-product="fluxmq">
+        <div class="pv-screenshot-wrap pv-screenshot-wrap--diagram">
+          <Image
+            src="/img/blogs/fluxmq-architecture/architecture-1.png"
+            alt="FluxMQ architecture diagram"
+            width={600}
+            height={340}
+            loading="lazy"
+            decoding="async"
+            class="pv-screenshot-img"
+          />
+        </div>
+        <div class="pv-copy">
+          <span class="product-category">Messaging</span>
+          <div class="fluxmq-wordmark">
+            <span class="fluxmq-flux">Flux</span><span class="fluxmq-mq">MQ</span>
+          </div>
+          <p class="product-desc">
+            Durable, low-latency MQTT message broker for distributed event
+            streams. Purpose-built for cloud-to-edge reliability.
+          </p>
+          <a href="https://fluxmq.absmach.eu" target="_blank" rel="noopener noreferrer" class="product-cta">
+            Explore FluxMQ ↗
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- ── Hardware: S0 + S1 spec cards ──────────────────────────── -->
+    <div class="products-row-2">
+
+      <!-- S0 Gateway -->
+      <article class="product-card-hw" data-product="s0">
+        <div class="hw-header">
+          <div>
+            <span class="product-category">Hardware</span>
+            <h3 class="hw-name">S0 Gateway</h3>
+            <p class="hw-tagline">Low-power edge node</p>
+          </div>
+          <div class="hw-board-thumb">
+            <Image
+              src="/img/s0.png"
+              alt="S0 Gateway PCB"
+              width={88}
+              height={88}
+              loading="lazy"
+              decoding="async"
+              class="hw-board-img"
             />
-          ))
-        }
-      </div>
+          </div>
+        </div>
+        <ul class="hw-specs">
+          <li>
+            <span class="hw-spec-key">Core</span>
+            <span class="hw-spec-val">RISC-V · ESP32-S3</span>
+          </li>
+          <li>
+            <span class="hw-spec-key">Radio</span>
+            <span class="hw-spec-val">WiFi · BLE · Zigbee</span>
+          </li>
+          <li>
+            <span class="hw-spec-key">Profile</span>
+            <span class="hw-spec-val">Ultra-low power, OTA updates</span>
+          </li>
+          <li>
+            <span class="hw-spec-key">Stack</span>
+            <span class="hw-spec-val">Magistrala · FluxMQ</span>
+          </li>
+        </ul>
+        <a href="https://hardware.absmach.eu" target="_blank" rel="noopener noreferrer" class="product-cta">
+          View S0 specs ↗
+        </a>
+      </article>
+
+      <!-- S1 Gateway -->
+      <article class="product-card-hw" data-product="s1">
+        <div class="hw-header">
+          <div>
+            <span class="product-category">Hardware</span>
+            <h3 class="hw-name">S1 Gateway</h3>
+            <p class="hw-tagline">Industrial edge system</p>
+          </div>
+          <div class="hw-board-thumb">
+            <Image
+              src="/img/beagle.png"
+              alt="S1 Gateway PCB"
+              width={88}
+              height={88}
+              loading="lazy"
+              decoding="async"
+              class="hw-board-img"
+            />
+          </div>
+        </div>
+        <ul class="hw-specs">
+          <li>
+            <span class="hw-spec-key">Core</span>
+            <span class="hw-spec-val">RISC-V · dual-core</span>
+          </li>
+          <li>
+            <span class="hw-spec-key">Connectivity</span>
+            <span class="hw-spec-val">Ethernet · WiFi · LTE</span>
+          </li>
+          <li>
+            <span class="hw-spec-key">Grade</span>
+            <span class="hw-spec-val">Industrial −40°C to +85°C</span>
+          </li>
+          <li>
+            <span class="hw-spec-key">Stack</span>
+            <span class="hw-spec-val">Magistrala · Propeller</span>
+          </li>
+        </ul>
+        <a href="https://hardware.absmach.eu" target="_blank" rel="noopener noreferrer" class="product-cta">
+          View S1 specs ↗
+        </a>
+      </article>
+
     </div>
 
-    <div class="mt-10 flex justify-center">
-      <a class="button-primary w-fit" href="/products/">View all products</a>
-    </div>
   </div>
 </section>
+
+<style>
+  .products-section {
+    padding-top: clamp(3rem, 5vw, 4.5rem);
+    padding-bottom: clamp(3rem, 5vw, 4.5rem);
+  }
+
+  .products-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .products-all-link {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  /* ── Shared card atoms ────────────────────────────────────── */
+  .product-category {
+    display: inline-flex;
+    font-size: 0.67rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  .product-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.1rem 0.45rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-contrast);
+    background: var(--accent);
+    border-radius: 3px;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    line-height: 1.4;
+  }
+
+  .product-cta {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    margin-top: 0.25rem;
+    position: relative;
+    z-index: 2;
+    transition: opacity 120ms ease;
+  }
+
+  .product-cta:hover {
+    opacity: 0.72;
+  }
+
+  /* ── Rows ─────────────────────────────────────────────────── */
+  .products-row-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+    margin-top: 0.875rem;
+  }
+
+  @media (min-width: 640px) {
+    .products-row-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* ── Magistrala: featured full-width ──────────────────────── */
+  .product-featured {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, var(--accent) 28%, var(--border));
+    background: var(--panel);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  .product-featured::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    border-radius: 12px 0 0 12px;
+    background: var(--accent);
+  }
+
+  .product-featured::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--accent) 5%, transparent) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+  }
+
+  .product-featured:hover,
+  .product-featured:focus-within {
+    border-color: color-mix(in srgb, var(--prod-accent, var(--accent)) 45%, var(--border));
+    box-shadow: var(--shadow-strong), inset 0 2px 0 color-mix(in srgb, var(--prod-accent, var(--accent)) 55%, transparent);
+  }
+
+  @media (min-width: 768px) {
+    .product-featured {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem 2rem 2rem 2.25rem;
+    }
+  }
+
+  .product-featured-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .product-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .magistrala-logo {
+    height: 2rem;
+    width: auto;
+    max-width: 10rem;
+    object-fit: contain;
+    display: block;
+    margin-top: 0.1rem;
+  }
+
+  .product-desc-lg {
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 0.1rem 0 0;
+    max-width: 44ch;
+  }
+
+  .product-features {
+    list-style: none;
+    padding: 0;
+    margin: 0.25rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .product-features li {
+    font-size: 0.8rem;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    color: var(--muted);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .product-features li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    opacity: 0.7;
+  }
+
+  /* ── Browser frame ────────────────────────────────────────── */
+  .product-featured-visual {
+    position: relative;
+    z-index: 0;
+  }
+
+  .browser-frame {
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  .browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 30px;
+    padding: 0 10px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .browser-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .browser-dot--r { background: #e06060; }
+  .browser-dot--y { background: #f4a62a; }
+  .browser-dot--g { background: #34c38f; }
+
+  .browser-url {
+    font-size: 0.65rem;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    color: var(--muted);
+    margin-left: 8px;
+    opacity: 0.7;
+  }
+
+  .browser-screenshot {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* ── Visual cards: Propeller / FluxMQ ────────────────────── */
+  .product-card-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  .product-card-visual:hover,
+  .product-card-visual:focus-within {
+    border-color: color-mix(in srgb, var(--prod-accent, var(--accent)) 40%, var(--border));
+    box-shadow: var(--shadow-strong), inset 0 2px 0 color-mix(in srgb, var(--prod-accent, var(--accent)) 55%, transparent);
+  }
+
+  .pv-screenshot-wrap {
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    max-height: 200px;
+    flex-shrink: 0;
+  }
+
+  .pv-screenshot-wrap--diagram {
+    background: #f8f9fc;
+  }
+
+  :root[data-theme="dark"] .pv-screenshot-wrap--diagram {
+    background: #1a1d24;
+  }
+
+  .pv-screenshot-img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: top left;
+  }
+
+  .pv-screenshot-wrap--diagram .pv-screenshot-img {
+    object-fit: contain;
+    padding: 0.75rem;
+    height: 180px;
+  }
+
+  .pv-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 1.1rem 1.25rem 1.25rem;
+    flex: 1;
+  }
+
+  .pv-logo {
+    height: 1.6rem;
+    width: auto;
+    max-width: 8rem;
+    object-fit: contain;
+    display: block;
+    margin-top: 0.05rem;
+  }
+
+  .product-desc {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* FluxMQ wordmark */
+  .fluxmq-wordmark {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    margin-top: 0.05rem;
+  }
+
+  .fluxmq-flux {
+    color: #5290e0;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .fluxmq-mq {
+    color: #f9a32a;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  /* ── Hardware spec cards ──────────────────────────────────── */
+  .product-card-hw {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--panel);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  .product-card-hw:hover,
+  .product-card-hw:focus-within {
+    border-color: color-mix(in srgb, var(--prod-accent, var(--accent)) 40%, var(--border));
+    box-shadow: var(--shadow-strong), inset 0 2px 0 color-mix(in srgb, var(--prod-accent, var(--accent)) 55%, transparent);
+  }
+
+  .hw-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .hw-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    margin: 0.15rem 0 0;
+  }
+
+  .hw-tagline {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin: 0.15rem 0 0;
+  }
+
+  .hw-board-thumb {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hw-board-img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+    opacity: 0.85;
+  }
+
+  .hw-specs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .hw-specs li {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.8rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hw-specs li:last-child {
+    border-bottom: none;
+  }
+
+  .hw-spec-key {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-weight: 600;
+    color: var(--muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    min-width: 6.5rem;
+    flex-shrink: 0;
+  }
+
+  .hw-spec-val {
+    color: var(--text);
+    font-size: 0.8rem;
+  }
+
+  /* ── Per-product accent colours ──────────────────────── */
+  [data-product="magistrala"] { --prod-accent: #4c83ff; }
+  [data-product="propeller"]  { --prod-accent: #34c38f; }
+  [data-product="fluxmq"]     { --prod-accent: #f4a62a; }
+  [data-product="s0"]         { --prod-accent: #e06060; }
+  [data-product="s1"]         { --prod-accent: #8090b8; }
+
+  .product-cta:focus-visible {
+    outline: 2px solid var(--prod-accent, var(--accent));
+    outline-offset: 2px;
+    border-radius: 2px;
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .product-featured,
+    .product-card-visual,
+    .product-card-hw {
+      transition: none;
+    }
+  }
+
+  @media (max-width: 479px) {
+    .product-featured,
+    .product-card-visual,
+    .product-card-hw {
+      border-radius: 10px;
+    }
+
+    .pv-copy,
+    .product-card-hw {
+      padding-inline: 1rem;
+    }
+
+    .hw-header {
+      align-items: stretch;
+    }
+
+    .hw-board-thumb {
+      width: 52px;
+      height: 52px;
+    }
+
+    .hw-board-img {
+      width: 44px;
+      height: 44px;
+    }
+
+    .hw-specs li {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.18rem;
+    }
+
+    .hw-spec-key {
+      min-width: 0;
+    }
+  }
+</style>

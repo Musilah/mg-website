@@ -4,42 +4,81 @@ const {
   subtitle,
   primary,
   secondary,
+  kicker,
   backgroundClass = "",
 } = Astro.props;
 ---
 
-<section class={`pt-10 pb-10 ${backgroundClass}`}>
+<section class={`page-hero ${backgroundClass}`}>
   <div class="container-wide">
-    <div class="mx-auto max-w-4xl text-center my-5 py-5">
-      <h1 class="text-4xl font-semibold md:text-5xl">{title}</h1>
-      {subtitle && <p class="mt-6 text-lg text-muted">{subtitle}</p>}
-      {
-        (primary || secondary) && (
-          <div class="mt-14 flex flex-wrap items-center justify-center gap-4">
-            {primary && (
-              <a
-                class="button-primary"
-                href={primary.href}
-                target={primary.external ? "_blank" : undefined}
-                rel={primary.external ? "noopener noreferrer" : undefined}
-              >
-                {primary.label}
-              </a>
-            )}
-            {secondary && (
-              <a
-                class="button-secondary"
-                href={secondary.href}
-                target={secondary.external ? "_blank" : undefined}
-                rel={secondary.external ? "noopener noreferrer" : undefined}
-              >
-                {secondary.label}
-              </a>
-            )}
-          </div>
-        )
+    <div class="page-hero-inner">
+      {kicker
+        ? <p class="section-label">{kicker}</p>
+        : <p class="section-label" aria-hidden="true">Abstract Machines</p>
       }
+      <h1 class="page-hero-title">{title}</h1>
+      {subtitle && <p class="page-hero-subtitle">{subtitle}</p>}
+      {(primary || secondary) && (
+        <div class="page-hero-ctas">
+          {primary && (
+            <a
+              class="button-primary"
+              href={primary.href}
+              target={primary.external ? "_blank" : undefined}
+              rel={primary.external ? "noopener noreferrer" : undefined}
+            >
+              {primary.label}
+            </a>
+          )}
+          {secondary && (
+            <a
+              class="button-secondary"
+              href={secondary.href}
+              target={secondary.external ? "_blank" : undefined}
+              rel={secondary.external ? "noopener noreferrer" : undefined}
+            >
+              {secondary.label}
+            </a>
+          )}
+        </div>
+      )}
     </div>
     <slot />
   </div>
 </section>
+
+<style>
+  .page-hero {
+    padding-top: clamp(2.5rem, 5vw, 4rem);
+    padding-bottom: clamp(2rem, 3.5vw, 3rem);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-hero-inner {
+    max-width: 54rem;
+  }
+
+  .page-hero-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--text);
+    margin-top: 0.65rem;
+  }
+
+  .page-hero-subtitle {
+    font-size: clamp(0.95rem, 1.35vw, 1.05rem);
+    color: var(--muted);
+    line-height: 1.75;
+    margin-top: 0.9rem;
+    max-width: 58ch;
+  }
+
+  .page-hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+  }
+</style>

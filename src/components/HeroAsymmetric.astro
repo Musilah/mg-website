@@ -1,0 +1,221 @@
+---
+import EcosystemDiagram from "./EcosystemDiagram.astro";
+---
+
+<section class="hero-section">
+  <div class="hero-shell">
+    <div class="hero-grid">
+
+      <!-- ── Left column: positioning copy ─────────────────────────── -->
+      <div class="hero-copy">
+        <!-- Kicker -->
+        <p class="hero-kicker">
+          <span class="kicker-line" aria-hidden="true"></span>
+          Paris&nbsp;·&nbsp;Open Source&nbsp;·&nbsp;Since&nbsp;2017
+        </p>
+
+        <!-- Headline -->
+        <h1 class="hero-headline">
+          Open infrastructure<br>
+          for secure<br class="md:hidden"> connectivity.
+        </h1>
+
+        <!-- Subtext -->
+        <p class="hero-subtext">
+          Software and hardware for secure, event-driven connectivity across
+          devices, gateways, messaging, and orchestration.
+        </p>
+
+        <!-- CTAs -->
+        <div class="hero-ctas">
+          <a href="/products/" class="button-primary hero-cta-primary">
+            Explore products
+          </a>
+          <a
+            href="https://github.com/absmach"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button-secondary hero-cta-secondary"
+          >
+            GitHub ↗
+          </a>
+        </div>
+
+        <!-- Quick product links -->
+        <div class="hero-product-pills" aria-label="Quick product links">
+          <a href="https://magistrala.absmach.eu" target="_blank" rel="noopener noreferrer" class="product-pill">Magistrala</a>
+          <a href="https://propeller.absmach.eu" target="_blank" rel="noopener noreferrer" class="product-pill">Propeller</a>
+          <a href="https://fluxmq.absmach.eu" target="_blank" rel="noopener noreferrer" class="product-pill">FluxMQ</a>
+          <a href="https://hardware.absmach.eu" target="_blank" rel="noopener noreferrer" class="product-pill">S0</a>
+          <a href="https://hardware.absmach.eu" target="_blank" rel="noopener noreferrer" class="product-pill">S1</a>
+        </div>
+      </div>
+
+      <!-- ── Right column: ecosystem diagram ───────────────────────── -->
+      <div class="hero-visual">
+        <EcosystemDiagram />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    padding-top: clamp(3.25rem, 6vw, 5.75rem);
+    padding-bottom: clamp(3.25rem, 7vw, 6.5rem);
+  }
+
+  .hero-shell {
+    width: min(100% - 2rem, 90rem);
+    margin: 0 auto;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2.25rem, 4vw, 4rem);
+    align-items: start;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-grid {
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      align-items: center;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .hero-grid {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    }
+  }
+
+  /* Copy column */
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hero-kicker {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  .kicker-line {
+    display: inline-block;
+    width: 1.75rem;
+    height: 1.5px;
+    background: var(--accent);
+    flex-shrink: 0;
+    opacity: 0.8;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.8rem, 6.2vw, 4.9rem);
+    font-weight: 700;
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+    color: var(--text);
+    max-width: 10ch;
+    margin: 0 0 1.25rem;
+  }
+
+  .hero-subtext {
+    font-size: clamp(1rem, 1.45vw, 1.15rem);
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 46ch;
+    margin: 0 0 2.1rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta-primary {
+    padding: 0.65rem 1.4rem;
+    font-size: 0.9rem;
+  }
+
+  .hero-cta-secondary {
+    padding: 0.65rem 1.4rem;
+    font-size: 0.9rem;
+  }
+
+  /* Quick product pills */
+  .hero-product-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .hero-product-pills::before {
+    content: "Products:";
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    flex-shrink: 0;
+    margin-right: 0.1rem;
+  }
+
+  .product-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    background: var(--panel);
+    text-decoration: none;
+    transition: border-color 120ms ease, color 120ms ease;
+    white-space: nowrap;
+  }
+
+  .product-pill:hover,
+  .product-pill:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* Visual column */
+  .hero-visual {
+    width: 100%;
+    /* On mobile, constrain so the cards don't stretch to full page width */
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 640px) {
+    .hero-visual {
+      max-width: 640px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-visual {
+      max-width: none;
+      margin: 0;
+      /* Align top of card grid with the kicker text baseline */
+      padding-top: 0.25rem;
+    }
+  }
+</style>

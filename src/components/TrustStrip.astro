@@ -1,0 +1,97 @@
+---
+// A lean horizontal credibility strip: factual signals only, no filler.
+const facts = [
+  { label: "Founded", value: "Paris, 2017" },
+  { label: "Deployed at", value: "Nokia · Intel · Ericsson" },
+  { label: "Research", value: "EU Horizon Europe" },
+  { label: "Source", value: "Open Source" },
+];
+---
+
+<div class="trust-strip">
+  <div class="container-wide">
+    <ul class="trust-list" role="list" aria-label="Company credentials">
+      {facts.map((fact, i) => (
+        <>
+          <li class="trust-item">
+            <span class="trust-label">{fact.label}</span>
+            <span class="trust-value">{fact.value}</span>
+          </li>
+          {i < facts.length - 1 && (
+            <li class="trust-sep" aria-hidden="true"></li>
+          )}
+        </>
+      ))}
+    </ul>
+  </div>
+</div>
+
+<style>
+  .trust-strip {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 0;
+    background: var(--surface);
+  }
+
+  .trust-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 1.25rem;
+    white-space: nowrap;
+  }
+
+  .trust-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    flex-shrink: 0;
+  }
+
+  .trust-value {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text);
+  }
+
+  .trust-sep {
+    width: 1px;
+    height: 1rem;
+    background: var(--border);
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 639px) {
+    .trust-item {
+      padding: 0.25rem 0.8rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.1rem;
+      min-width: 45%;
+    }
+
+    .trust-sep {
+      display: none;
+    }
+
+    .trust-list {
+      justify-content: flex-start;
+      gap: 0.5rem 0;
+    }
+  }
+</style>

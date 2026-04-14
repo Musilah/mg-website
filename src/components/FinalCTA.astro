@@ -14,33 +14,92 @@ const {
 };
 ---
 
-<section class="my-10 flex items-center justify-center py-10">
-  <div class="mx-auto max-w-4xl px-6 text-center">
-    <h2 class="text-4xl font-semibold leading-tight md:text-6xl">{title}</h2>
-
-    {subtitle && <p class="mt-6 text-lg text-muted md:text-xl">{subtitle}</p>}
-
-    <div class="mt-10 flex flex-wrap items-center justify-center gap-6">
-      {primary && (
-        <a
-          class="button-primary px-8 py-4 text-lg"
-          href={primary.href}
-          target={primary.external ? "_blank" : undefined}
-          rel={primary.external ? "noopener noreferrer" : undefined}
-        >
-          {primary.label}
-        </a>
-      )}
-      {secondary && (
-        <a
-          class="button-secondary px-8 py-4 text-lg"
-          href={secondary.href}
-          target={secondary.external ? "_blank" : undefined}
-          rel={secondary.external ? "noopener noreferrer" : undefined}
-        >
-          {secondary.label}
-        </a>
-      )}
+<section class="cta-section">
+  <div class="container-wide">
+    <div class="cta-inner">
+      <div class="cta-copy">
+        <h2 class="cta-title">{title}</h2>
+        {subtitle && <p class="cta-subtitle">{subtitle}</p>}
+      </div>
+      <div class="cta-actions">
+        {primary && (
+          <a
+            class="button-primary"
+            href={primary.href}
+            target={primary.external ? "_blank" : undefined}
+            rel={primary.external ? "noopener noreferrer" : undefined}
+          >
+            {primary.label}
+          </a>
+        )}
+        {secondary && (
+          <a
+            class="button-secondary"
+            href={secondary.href}
+            target={secondary.external ? "_blank" : undefined}
+            rel={secondary.external ? "noopener noreferrer" : undefined}
+          >
+            {secondary.label}
+          </a>
+        )}
+      </div>
     </div>
   </div>
 </section>
+
+<style>
+  .cta-section {
+    padding: clamp(3rem, 5vw, 5rem) 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .cta-copy {
+    max-width: 52ch;
+  }
+
+  .cta-title {
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--text);
+  }
+
+  .cta-subtitle {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 639px) {
+    .cta-inner {
+      align-items: flex-start;
+    }
+
+    .cta-actions {
+      width: 100%;
+    }
+
+    .cta-actions > a {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

@@ -8,22 +8,23 @@ export default {
         ink: "#070b12",
         panel: "#0f1520",
         slate: "#121a25",
-        mist: "#a8b3c7",
-        accent: "#2dd4ff",
-        "electric-cyan": "#00d9ff",
+        mist: "#8a96a8",
+        accent: "#1a5cf6",
+        "accent-dark": "#4d88ff",
         "flux-blue": "#5290e0",
         "flux-orange": "#f9a32a",
       },
       boxShadow: {
-        soft: "0 12px 30px rgba(3, 8, 18, 0.35)",
-        strong: "0 24px 60px rgba(3, 8, 18, 0.45)"
+        soft: "0 1px 3px rgba(13, 17, 23, 0.06), 0 4px 16px rgba(13, 17, 23, 0.06)",
+        strong: "0 4px 24px rgba(13, 17, 23, 0.1)",
       },
-
       fontFamily: {
         "fluxmq-logo": ["Verdana", "Geneva", "sans-serif"],
+        mono: ["'JetBrains Mono'", "'Courier New'", "monospace"],
       },
-
-
+      letterSpacing: {
+        technical: "0.18em",
+      },
     }
   },
 

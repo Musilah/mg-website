@@ -1,110 +1,806 @@
 ---
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import HeroBig from "../components/HeroBig.astro";
-import Section from "../components/Section.astro";
-import ProductCard from "../components/ProductCard.astro";
 import FinalCTA from "../components/FinalCTA.astro";
+
+const software = [
+  {
+    name: "Magistrala",
+    label: "Flagship IoT Platform",
+    tagline: "Device identity, access control, and event-driven connectivity at any scale.",
+    description:
+      "The foundation of the Abstract Machines stack. Magistrala brings together multi-protocol device connectivity, policy-based access control, time-series data ingestion, and automation in a cloud-native, multi-tenant platform.",
+    features: [
+      "MQTT, CoAP, HTTP, WebSocket support",
+      "Role-based and attribute-based access control",
+      "Time-series data storage and querying",
+      "Multi-tenant architecture",
+      "Kubernetes-ready, horizontally scalable",
+      "OpenAPI + gRPC interfaces",
+    ],
+    href: "https://magistrala.absmach.eu",
+    logoSrc: "/img/logos/Magistrala_logo_web_4_btb.png",
+    logoAlt: "Magistrala",
+    screenshotSrc: "/img/blogs/magistrala-ui-guide/dashboard.png",
+    screenshotAlt: "Magistrala dashboard",
+    accent: "#4c83ff",
+    featured: true,
+  },
+  {
+    name: "Propeller",
+    label: "Orchestration",
+    tagline: "WebAssembly orchestration and IoT rule engine for cloud-to-edge workloads.",
+    description:
+      "Propeller runs WebAssembly workloads across cloud, edge environments, and microcontrollers without recompilation. It combines orchestration with a real-time rule engine for event processing and workload scheduling across mixed deployments.",
+    features: [
+      "WebAssembly-native runtime",
+      "Cloud, edge, and MCU targeting",
+      "Real-time rule engine",
+      "Pluggable transport layer",
+    ],
+    href: "https://propeller.absmach.eu",
+    logoSrc: "/img/logos/Propeller_logo_web_4_btw.png",
+    logoAlt: "Propeller",
+    screenshotSrc: "/proplet.png",
+    screenshotAlt: "Propeller proplet manifest view",
+    accent: "#34c38f",
+    featured: false,
+  },
+  {
+    name: "FluxMQ",
+    label: "Messaging",
+    tagline: "Durable, low-latency MQTT broker for distributed event streams.",
+    description:
+      "FluxMQ is a purpose-built message broker for reliable distributed connectivity. It delivers durable event transport, low-latency routing, and clean integration with the rest of the Abstract Machines stack.",
+    features: [
+      "MQTT 3.1.1 and 5.0 compliant",
+      "Durable message queues",
+      "Low-latency edge routing",
+      "Native Magistrala integration",
+    ],
+    href: "https://fluxmq.absmach.eu",
+    logoSrc: null,
+    logoAlt: "FluxMQ",
+    screenshotSrc: "/img/blogs/fluxmq-architecture/architecture-1.png",
+    screenshotAlt: "FluxMQ architecture",
+    accent: "#f4a62a",
+    featured: false,
+    isFluxMQ: true,
+  },
+];
+
+const hardware = [
+  {
+    name: "S0 Gateway",
+    label: "Low-power edge node",
+    tagline: "Ultra-low-power RISC-V gateway for sensor networks and lightweight edge deployments.",
+    specs: [
+      { key: "Core", val: "RISC-V · ESP32-S3" },
+      { key: "Radio", val: "WiFi · BLE · Zigbee" },
+      { key: "Power", val: "Ultra-low power · OTA updates" },
+      { key: "Stack", val: "Magistrala · FluxMQ" },
+      { key: "Use case", val: "Sensor nodes, smart metering, lightweight edge" },
+    ],
+    href: "https://hardware.absmach.eu",
+    imgSrc: "/img/s0.png",
+    imgAlt: "S0 Gateway PCB",
+    accent: "#e06060",
+  },
+  {
+    name: "S1 Gateway",
+    label: "Industrial edge system",
+    tagline: "Industrial-grade RISC-V gateway for demanding environments and high-reliability deployments.",
+    specs: [
+      { key: "Core", val: "RISC-V · dual-core" },
+      { key: "Connectivity", val: "Ethernet · WiFi · LTE" },
+      { key: "Grade", val: "Industrial −40°C to +85°C" },
+      { key: "Stack", val: "Magistrala · Propeller" },
+      { key: "Use case", val: "Industrial IoT, fleet, critical infrastructure" },
+    ],
+    href: "https://hardware.absmach.eu",
+    imgSrc: "/img/beagle.png",
+    imgAlt: "S1 Gateway PCB",
+    accent: "#8090b8",
+  },
+];
 ---
 
 <BaseLayout
   title="Products | Abstract Machines"
-  description="Open-source software and custom hardware for building secure, distributed systems."
+  description="Five open-source products, Magistrala, Propeller, FluxMQ, S0, and S1, forming a complete infrastructure stack for secure IoT and connectivity."
 >
   <Header />
   <main>
-    <HeroBig
-      title="Complete Infrastructure Stack"
-      subtitle="Open-source software and custom hardware for building secure, distributed systems"
-      backgroundClass="hero-grid"
-    />
 
-    <Section
-      title="Software"
-      subtitle="Production-ready platforms for IoT and edge computing"
-      id="products"
-    >
-      <div class="grid gap-6 md:grid-cols-2">
-        <ProductCard
-          featured
-          kicker="Magistrala"
-          title="Secure IoT Platform"
-          description="Secure and open source IoT platform for device management, identity and access control, enabling reliable data flows across cloud and edge using MQTT and CoAP."
-          ctaLabel="Explore Magistrala"
-          href="https://magistrala.absmach.eu"
-          logoSrc="/img/logos/Magistrala_logo_web_4_btb.png"
-          logoAlt="Magistrala logo"
-          logoLoading="eager"
-          logoClass="dark:invert "
-        />
-        <ProductCard
-          kicker="Propeller"
-          title="WebAssembly Orchestrator & IoT Rule Engine"
-          description="Serverless WebAssembly orchestration platform for secure IoT workloads, running across cloud, edge devices and microcontrollers."
-          ctaLabel="Learn more"
-          href="https://propeller.absmach.eu"
-          logoSrc="/img/logos/Propeller_logo_web_4_btw.png"
-          logoAlt="Propeller logo"
-          logoLoading="eager"
-          logoClass="dark:invert "
-        />
-        <ProductCard
-          kicker="FluxMQ"
-          title="FluxMQ - Distributed Message Broker"
-          description="FluxMQ is a durable message broker for event-driven systems, built for low-latency routing across cloud and edge."
-          ctaLabel="Learn more"
-          href="https://fluxmq.absmach.eu"
-        >
-          <span
-            slot="logo"
-            class="text-flux-blue font-fluxmq-logo text-3xl font-bold"
-            >Flux</span
-          >
-          <span
-            slot="logo"
-            class="text-flux-orange font-fluxmq-logo text-3xl font-bold"
-            >MQ</span
-          >
-        </ProductCard>
+    <!-- Page header -->
+    <section class="products-page-hero">
+      <div class="container-wide">
+        <p class="section-label">Products</p>
+        <h1 class="products-page-title">Five products.<br>One coherent stack.</h1>
+        <p class="products-page-sub">
+          Open-source software and RISC-V hardware for secure, event-driven connectivity
+          across devices, gateways, messaging, and orchestration.
+        </p>
+        <div class="products-page-ctas">
+          <a href="/contact/" class="button-primary">Talk to us</a>
+          <a href="https://github.com/absmach" target="_blank" rel="noopener noreferrer" class="button-secondary">GitHub ↗</a>
+        </div>
       </div>
-    </Section>
+    </section>
 
-    <Section
-      title="Hardware"
-      subtitle="RISC-V gateways for edge deployment"
-      id="hardware"
-    >
-      <div class="grid gap-6 md:grid-cols-2">
-        <ProductCard
-          kicker="S0 Gateway"
-          title="S0 Gateway"
-          description="Low-power RISC-V gateway designed for lightweight, distributed edge deployments."
-          ctaLabel="Learn more"
-          href="https://hardware.absmach.eu"
-          logoSrc="/img/s0.png"
-          logoAlt="S0 logo"
-          logoClass="!h-full !w-full !max-w-full !object-contain mx-auto"
-        />
-        <ProductCard
-          kicker="S1 Gateway"
-          title="S1 Gateway"
-          description="Industrial RISC-V gateway built for reliable edge deployments in harsh environments."
-          ctaLabel="Learn more"
-          href="https://hardware.absmach.eu"
-          logoSrc="/img/beagle.png"
-          logoAlt="S1 logo"
-          logoClass="!h-full !w-full !max-w-full !object-contain mx-auto"
-        />
+    <!-- ── Software products ─────────────────────────────── -->
+    <section class="products-section">
+      <div class="container-wide">
+        <div class="products-section-header">
+          <p class="section-label">Software</p>
+          <h2 class="section-title">Platform &amp; Middleware</h2>
+          <p class="section-subtitle">Production-ready platforms for IoT, messaging, and edge orchestration.</p>
+        </div>
+
+        <!-- Magistrala: full-width featured -->
+        <article class="product-featured" style={`--prod-accent: ${software[0].accent}`}>
+          <div class="product-featured-copy">
+            <div class="product-meta-row">
+              <span class="product-category">{software[0].label}</span>
+              <span class="product-flagship-badge">Flagship</span>
+            </div>
+            <Image
+              src={software[0].logoSrc!}
+              alt={software[0].logoAlt}
+              width={200}
+              height={56}
+              loading="eager"
+              decoding="async"
+              class="product-logo dark:invert"
+            />
+            <p class="product-tagline">{software[0].tagline}</p>
+            <p class="product-description">{software[0].description}</p>
+            <ul class="product-feature-list">
+              {software[0].features.map((f) => <li>{f}</li>)}
+            </ul>
+            <a href={software[0].href} target="_blank" rel="noopener noreferrer" class="product-cta">
+              Explore Magistrala ↗
+            </a>
+          </div>
+          <div class="product-featured-visual">
+            <div class="browser-frame">
+              <div class="browser-bar">
+                <span class="bdot bdot--r"></span>
+                <span class="bdot bdot--y"></span>
+                <span class="bdot bdot--g"></span>
+                <span class="browser-url-label">magistrala.absmach.eu</span>
+              </div>
+              <Image
+                src={software[0].screenshotSrc!}
+                alt={software[0].screenshotAlt}
+                width={720}
+                height={450}
+                loading="eager"
+                decoding="async"
+                class="browser-screenshot"
+              />
+            </div>
+          </div>
+        </article>
+
+        <!-- Propeller + FluxMQ: 2-col -->
+        <div class="products-row-2">
+          {software.slice(1).map((p) => (
+            <article class="product-card-visual" style={`--prod-accent: ${p.accent}`}>
+              <div class={`pv-screenshot-wrap${p.isFluxMQ ? " pv-screenshot-diagram" : ""}`}>
+                <Image
+                  src={p.screenshotSrc!}
+                  alt={p.screenshotAlt}
+                  width={600}
+                  height={340}
+                  loading="lazy"
+                  decoding="async"
+                  class="pv-screenshot-img"
+                />
+              </div>
+              <div class="pv-copy">
+                <span class="product-category">{p.label}</span>
+                {p.isFluxMQ ? (
+                  <div class="fluxmq-wordmark">
+                    <span class="fluxmq-flux">Flux</span><span class="fluxmq-mq">MQ</span>
+                  </div>
+                ) : (
+                  <Image
+                    src={p.logoSrc!}
+                    alt={p.logoAlt}
+                    width={160}
+                    height={48}
+                    loading="lazy"
+                    decoding="async"
+                    class="pv-logo dark:invert"
+                  />
+                )}
+                <p class="product-tagline-sm">{p.tagline}</p>
+                <p class="product-description-sm">{p.description}</p>
+                <ul class="product-feature-list-sm">
+                  {p.features.map((f) => <li>{f}</li>)}
+                </ul>
+                <a href={p.href} target="_blank" rel="noopener noreferrer" class="product-cta">
+                  Explore {p.name} ↗
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
-    </Section>
+    </section>
+
+    <!-- ── Hardware products ─────────────────────────────── -->
+    <section class="products-section products-section--hardware">
+      <div class="container-wide">
+        <div class="products-section-header">
+          <p class="section-label">Hardware</p>
+          <h2 class="section-title">RISC-V Gateways</h2>
+          <p class="section-subtitle">Custom edge hardware designed to run the Abstract Machines software stack.</p>
+        </div>
+
+        <div class="products-row-2">
+          {hardware.map((h) => (
+            <article class="product-card-hw" style={`--prod-accent: ${h.accent}`}>
+              <div class="hw-header">
+                <div>
+                  <span class="product-category">{h.label}</span>
+                  <h3 class="hw-name">{h.name}</h3>
+                  <p class="hw-tagline">{h.tagline}</p>
+                </div>
+                <div class="hw-thumb">
+                  <Image
+                    src={h.imgSrc}
+                    alt={h.imgAlt}
+                    width={88}
+                    height={88}
+                    loading="lazy"
+                    decoding="async"
+                    class="hw-thumb-img"
+                  />
+                </div>
+              </div>
+              <table class="hw-spec-table">
+                <tbody>
+                  {h.specs.map((s) => (
+                    <tr>
+                      <td class="hw-spec-key">{s.key}</td>
+                      <td class="hw-spec-val">{s.val}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <a href={h.href} target="_blank" rel="noopener noreferrer" class="product-cta">
+                View {h.name} specs ↗
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
 
     <FinalCTA
-      title="Need Custom Solutions?"
-      subtitle="We provide tailored implementations, integrations, and managed services"
-      primary={{ label: "Get in Touch", href: "/contact/", external: false }}
-      secondary={null}
+      title="Need a custom integration or managed deployment?"
+      subtitle={null}
+      primary={{ label: "Talk to us", href: "/contact/", external: false }}
+      secondary={{ label: "View services", href: "/services/", external: false }}
     />
   </main>
   <Footer />
 </BaseLayout>
+
+<style>
+  /* ── Page hero ────────────────────────────────────────── */
+  .products-page-hero {
+    padding-top: clamp(2.5rem, 5vw, 4rem);
+    padding-bottom: clamp(2rem, 3.5vw, 3rem);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .products-page-title {
+    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    font-weight: 700;
+    letter-spacing: -0.035em;
+    line-height: 1.08;
+    color: var(--text);
+    margin-top: 0.65rem;
+  }
+
+  .products-page-sub {
+    font-size: clamp(0.95rem, 1.35vw, 1.05rem);
+    color: var(--muted);
+    line-height: 1.75;
+    margin-top: 0.9rem;
+    max-width: 56ch;
+  }
+
+  .products-page-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.75rem;
+  }
+
+  /* ── Section wrappers ─────────────────────────────────── */
+  .products-section {
+    padding-top: clamp(2.5rem, 4vw, 3.5rem);
+    padding-bottom: clamp(2rem, 3vw, 3rem);
+  }
+
+  .products-section--hardware {
+    border-top: 1px solid var(--border);
+  }
+
+  .products-section-header {
+    margin-bottom: 1.75rem;
+  }
+
+  /* ── Row layout ───────────────────────────────────────── */
+  .products-row-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+    margin-top: 0.875rem;
+  }
+
+  @media (min-width: 640px) {
+    .products-row-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* ── Shared card atoms ────────────────────────────────── */
+  .product-category {
+    display: inline-flex;
+    font-size: 0.67rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  .product-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .product-flagship-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.1rem 0.45rem;
+    font-size: 0.63rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-contrast);
+    background: var(--accent);
+    border-radius: 3px;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    line-height: 1.5;
+  }
+
+  .product-logo {
+    height: 1.75rem;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin-top: 0.35rem;
+  }
+
+  .product-cta {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: var(--prod-accent, var(--accent));
+    text-decoration: none;
+    margin-top: 0.5rem;
+    position: relative;
+    z-index: 2;
+    transition: opacity 120ms ease;
+  }
+
+  .product-cta:hover { opacity: 0.72; }
+
+  .product-cta:focus-visible {
+    outline: 2px solid var(--prod-accent, var(--accent));
+    outline-offset: 2px;
+    border-radius: 2px;
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .product-featured,
+    .product-card-visual,
+    .product-card-hw {
+      transition: none;
+    }
+  }
+
+  /* ── Featured Magistrala ─────────────────────────────── */
+  .product-featured {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, var(--prod-accent) 28%, var(--border));
+    background: var(--panel);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  .product-featured::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    border-radius: 12px 0 0 12px;
+    background: var(--prod-accent);
+  }
+
+  .product-featured::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--prod-accent) 5%, transparent) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .product-featured:hover,
+  .product-featured:focus-within {
+    border-color: color-mix(in srgb, var(--prod-accent) 45%, var(--border));
+    box-shadow: var(--shadow-strong), inset 0 2px 0 color-mix(in srgb, var(--prod-accent) 55%, transparent);
+  }
+
+  @media (min-width: 768px) {
+    .product-featured {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem 2rem 2rem 2.25rem;
+    }
+  }
+
+  .product-featured-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .product-tagline {
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.5;
+    margin-top: 0.1rem;
+  }
+
+  .product-description {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 46ch;
+  }
+
+  .product-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.25rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.28rem;
+  }
+
+  .product-feature-list li {
+    font-size: 0.8rem;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    color: var(--muted);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .product-feature-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--prod-accent);
+    opacity: 0.65;
+  }
+
+  /* ── Browser frame ───────────────────────────────────── */
+  .product-featured-visual { position: relative; z-index: 0; }
+
+  .browser-frame {
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 30px;
+    padding: 0 10px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .bdot {
+    width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0;
+  }
+  .bdot--r { background: #e06060; }
+  .bdot--y { background: #f4a62a; }
+  .bdot--g { background: #34c38f; }
+
+  .browser-url-label {
+    font-size: 0.63rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--muted);
+    margin-left: 6px;
+    opacity: 0.65;
+  }
+
+  .browser-screenshot {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* ── Visual cards: Propeller / FluxMQ ──────────────────── */
+  .product-card-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, var(--prod-accent) 20%, var(--border));
+    background: var(--panel);
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  .product-card-visual:hover,
+  .product-card-visual:focus-within {
+    border-color: color-mix(in srgb, var(--prod-accent) 40%, var(--border));
+    box-shadow: var(--shadow-strong), inset 0 2px 0 color-mix(in srgb, var(--prod-accent) 55%, transparent);
+  }
+
+  .pv-screenshot-wrap {
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    flex-shrink: 0;
+  }
+
+  .pv-screenshot-diagram { background: var(--surface-2); }
+
+  .pv-screenshot-img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: top left;
+  }
+
+  .pv-screenshot-diagram .pv-screenshot-img {
+    object-fit: contain;
+    padding: 0.75rem;
+    height: 180px;
+  }
+
+  .pv-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 1.1rem 1.25rem 1.25rem;
+    flex: 1;
+  }
+
+  .pv-logo {
+    height: 1.5rem;
+    width: auto;
+    max-width: 8rem;
+    object-fit: contain;
+    display: block;
+    margin-top: 0.05rem;
+  }
+
+  .product-tagline-sm {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  .product-description-sm {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  .product-feature-list-sm {
+    list-style: none;
+    padding: 0;
+    margin: 0.1rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.22rem;
+  }
+
+  .product-feature-list-sm li {
+    font-size: 0.775rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--muted);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .product-feature-list-sm li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--prod-accent);
+    opacity: 0.6;
+  }
+
+  /* FluxMQ wordmark */
+  .fluxmq-wordmark { display: flex; align-items: center; margin-top: 0.05rem; }
+  .fluxmq-flux { color: #5290e0; font-family: Verdana, Geneva, sans-serif; font-size: 1.15rem; font-weight: 700; line-height: 1; }
+  .fluxmq-mq   { color: #f9a32a; font-family: Verdana, Geneva, sans-serif; font-size: 1.15rem; font-weight: 700; line-height: 1; }
+
+  /* ── Hardware spec cards ─────────────────────────────── */
+  .product-card-hw {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.25rem;
+    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, var(--prod-accent) 20%, var(--border));
+    background: var(--panel);
+    box-shadow: var(--shadow-soft);
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  .product-card-hw:hover,
+  .product-card-hw:focus-within {
+    border-color: color-mix(in srgb, var(--prod-accent) 40%, var(--border));
+    box-shadow: var(--shadow-strong), inset 0 2px 0 color-mix(in srgb, var(--prod-accent) 55%, transparent);
+  }
+
+  .hw-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .hw-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin: 0.15rem 0 0;
+  }
+
+  .hw-tagline {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.55;
+    margin-top: 0.25rem;
+    max-width: 34ch;
+  }
+
+  .hw-thumb {
+    flex-shrink: 0;
+    width: 60px; height: 60px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hw-thumb-img {
+    width: 50px; height: 50px;
+    object-fit: contain;
+    display: block;
+    opacity: 0.85;
+  }
+
+  .hw-spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 0.8rem;
+  }
+
+  .hw-spec-table tr {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hw-spec-table tr:last-child {
+    border-bottom: none;
+  }
+
+  .hw-spec-key {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.45rem 0.75rem;
+    white-space: nowrap;
+    width: 7rem;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+  }
+
+  .hw-spec-val {
+    color: var(--text);
+    padding: 0.45rem 0.75rem;
+  }
+
+  @media (max-width: 479px) {
+    .product-featured,
+    .product-card-visual,
+    .product-card-hw {
+      border-radius: 10px;
+    }
+
+    .hw-header {
+      align-items: stretch;
+    }
+
+    .hw-thumb {
+      width: 52px;
+      height: 52px;
+    }
+
+    .hw-thumb-img {
+      width: 44px;
+      height: 44px;
+    }
+
+    .hw-spec-table,
+    .hw-spec-table tbody,
+    .hw-spec-table tr,
+    .hw-spec-key,
+    .hw-spec-val {
+      display: block;
+      width: 100%;
+    }
+
+    .hw-spec-table tr {
+      padding: 0.5rem 0.75rem;
+    }
+
+    .hw-spec-key {
+      padding: 0;
+      margin-bottom: 0.2rem;
+      border-right: none;
+      background: transparent;
+      white-space: normal;
+    }
+
+    .hw-spec-val {
+      padding: 0;
+    }
+  }
+</style>

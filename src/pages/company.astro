@@ -101,7 +101,7 @@ const team = [
       secondary={{ label: "Explore projects", href: "/projects/", external: false }}
       backgroundClass="hero-grid"
     >
-      <div class="rounded-2xl border border-subtle bg-panel p-6 shadow-[var(--shadow-soft)] md:p-8">
+      <div class="rounded-xl border border-subtle bg-panel p-6 shadow-[var(--shadow-soft)] md:p-8">
         <p class="section-label">At a glance</p>
         <dl class="mt-6 space-y-4 text-sm">
           {facts.map((item) => (
@@ -134,8 +134,8 @@ const team = [
     </Hero>
 
     <Section title="Our mission" center>
-      <div class="mx-auto max-w-4xl rounded-3xl border border-subtle bg-panel p-8 text-center shadow-[var(--shadow-soft)] md:p-12">
-        <p class="text-lg text-muted md:text-xl leading-relaxed">
+      <div class="mx-auto max-w-3xl rounded-xl border border-subtle bg-panel px-8 py-10 text-center shadow-[var(--shadow-soft)]">
+        <p class="text-lg text-muted leading-relaxed">
           To democratize access to enterprise-grade infrastructure through open-source
           innovation, enabling organizations of all sizes to build secure, scalable
           distributed systems.
@@ -150,26 +150,22 @@ const team = [
     >
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
         {values.map((value) => (
-          <article class="card-base">
-            <div class="flex items-start gap-4">
-              <div class="flex h-12 w-12 flex-none items-center justify-center rounded-2xl border border-subtle bg-surface-2 text-accent">
-                <svg
-                  class="h-6 w-6"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d={value.icon}></path>
-                </svg>
-              </div>
-              <div class="min-w-0">
-                <h3 class="text-xl font-semibold">{value.title}</h3>
-                <p class="mt-2 text-muted">{value.description}</p>
-              </div>
+          <article class="card-base flex flex-col gap-3">
+            <svg
+              class="h-5 w-5 text-accent flex-shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d={value.icon}></path>
+            </svg>
+            <div>
+              <h3 class="text-base font-semibold">{value.title}</h3>
+              <p class="mt-1 text-sm text-muted">{value.description}</p>
             </div>
           </article>
         ))}
@@ -184,7 +180,7 @@ const team = [
       <div class="grid gap-6 md:grid-cols-3">
         {team.map((dept) => (
           <article class="card-base text-center">
-            <p class="text-5xl font-semibold tracking-tight text-accent">
+            <p class="text-4xl font-semibold tracking-tight text-accent">
               {dept.count}
             </p>
             <h3 class="mt-4 text-xl font-semibold">{dept.role}</h3>
@@ -257,7 +253,7 @@ const team = [
         </div>
 
         <div class="card-base">
-          <div class="overflow-hidden rounded-2xl border border-subtle bg-surface-2">
+          <div class="overflow-hidden rounded-lg border border-subtle bg-surface-2">
             <iframe
               title="Map showing Abstract Machines office in Paris"
               class="company-map-embed aspect-video w-full"
