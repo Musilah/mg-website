@@ -6,7 +6,7 @@ import HeroAsymmetric from "../components/HeroAsymmetric.astro";
 import ProductsPreview from "../components/ProductsPreview.astro";
 import ProjectsPreview from "../components/ProjectsPreview.astro";
 import PartnersCarousel from "../components/PartnersCarousel.astro";
-import FinalCTA from "../components/FinalCTA.astro";
+import HomeClosing from "../components/HomeClosing.astro";
 ---
 
 <BaseLayout
@@ -36,12 +36,7 @@ import FinalCTA from "../components/FinalCTA.astro";
 
     <ProjectsPreview />
 
-    <FinalCTA
-      title="Let's build something together."
-      subtitle={null}
-      primary={{ label: "Contact us", href: "/contact/", external: false }}
-      secondary={{ label: "Explore products", href: "/products/", external: false }}
-    />
+    <HomeClosing />
   </main>
   <Footer />
 </BaseLayout>

@@ -45,7 +45,7 @@ const software = [
     logoAlt: "Propeller",
     screenshotSrc: "/proplet.png",
     screenshotAlt: "Propeller proplet manifest view",
-    accent: "#34c38f",
+    accent: "#c0293d",
     featured: false,
   },
   {
@@ -118,7 +118,7 @@ const hardware = [
     <section class="products-page-hero">
       <div class="container-wide">
         <p class="section-label">Products</p>
-        <h1 class="products-page-title">Five products.<br>One coherent stack.</h1>
+        <h1 class="products-page-title">Five products.<br><span class="title-dim">One coherent stack.</span></h1>
         <p class="products-page-sub">
           Open-source software and RISC-V hardware for secure, event-driven connectivity
           across devices, gateways, messaging, and orchestration.
@@ -294,16 +294,22 @@ const hardware = [
 <style>
   /* ── Page hero ────────────────────────────────────────── */
   .products-page-hero {
-    padding-top: clamp(2.5rem, 5vw, 4rem);
-    padding-bottom: clamp(2rem, 3.5vw, 3rem);
-    border-bottom: 1px solid var(--border);
+    padding-top: clamp(3rem, 6vw, 5rem);
+    padding-bottom: clamp(2.5rem, 4vw, 4rem);
+    text-align: center;
+  }
+
+  .products-page-hero > .container-wide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .products-page-title {
-    font-size: clamp(2rem, 4.5vw, 3.25rem);
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
     font-weight: 700;
-    letter-spacing: -0.035em;
-    line-height: 1.08;
+    letter-spacing: -0.04em;
+    line-height: 1.06;
     color: var(--text);
     margin-top: 0.65rem;
   }
@@ -314,6 +320,7 @@ const hardware = [
     line-height: 1.75;
     margin-top: 0.9rem;
     max-width: 56ch;
+    text-align: center;
   }
 
   .products-page-ctas {
@@ -321,6 +328,7 @@ const hardware = [
     flex-wrap: wrap;
     gap: 0.75rem;
     margin-top: 1.75rem;
+    justify-content: center;
   }
 
   /* ── Section wrappers ─────────────────────────────────── */
@@ -330,7 +338,6 @@ const hardware = [
   }
 
   .products-section--hardware {
-    border-top: 1px solid var(--border);
   }
 
   .products-section-header {

@@ -5,12 +5,14 @@ const featuredProject = {
   name: "CONFIDENTIAL6G",
   tagline: "Quantum-Resistant Security for 6G Networks",
   description:
-    "Developing cryptographic protocols and secure architectures for next-generation 6G systems.",
+    "Ensuring secure and private computation in the cloud-edge continuum of 6G. Tackling the post-quantum threat by developing modern cryptographic techniques, libraries, and protocols for next-generation telecommunications.",
   duration: "2023–2025",
   program: "EU Horizon Europe",
+  role: "Technical Manager",
+  areas: ["Post-Quantum", "Confidential Computing", "6G Security", "Privacy-Preserving AI"],
   href: "/projects/confidential6g/",
   logoSrc: "/img/logos/confidential6G.jpg",
-  logoAlt: "CONFIDENTIAL6G logo",
+  logoAlt: "CONFIDENTIAL6G project logo",
   external: false,
   accent: "#4c83ff",
 };
@@ -20,9 +22,10 @@ const secondaryProjects = [
     name: "Elastic",
     tagline: "Next-Gen Network Orchestration",
     description:
-      "WebAssembly-based orchestration with confidential computing for cloud-edge workloads.",
+      "WebAssembly-based orchestration with Confidential Computing for cloud-edge workloads — enabling dynamic, secure service delivery across 6G infrastructures.",
     duration: "2023–2027",
     program: "EU Horizon Europe",
+    areas: ["WebAssembly", "Confidential Computing", "6G", "Edge Orchestration"],
     href: "/projects/elastic/",
     logoSrc: "/img/logos/elastic.png",
     logoAlt: "Elastic project logo",
@@ -34,9 +37,10 @@ const secondaryProjects = [
     name: "EdgeX Foundry",
     tagline: "Open Source Edge Platform",
     description:
-      "Open ecosystem contribution for interoperable edge deployments and cloud-edge connectivity.",
+      "Contributing to the Linux Foundation's EdgeX Foundry project. Magistrala integration bridges edge intelligence with cloud-scale connectivity.",
     duration: "2017–Present",
     program: "Linux Foundation",
+    areas: ["Edge Computing", "IoT", "Open Source", "Interoperability"],
     href: "https://www.edgexfoundry.org",
     logoSrc: "/img/logos/lf.png",
     logoAlt: "Linux Foundation logo",
@@ -61,27 +65,12 @@ const secondaryProjects = [
       <a class="button-secondary proj-view-all" href="/projects/">View all →</a>
     </div>
 
-    <!-- Featured project -->
+    <!-- ── Featured project: CONFIDENTIAL6G ─────────────── -->
     <article class="proj-featured" style={`--proj-accent: ${featuredProject.accent}`}>
-      <div class="proj-featured-inner">
-        <div class="proj-featured-copy">
-          <div class="proj-meta-row">
-            <span class="proj-program">{featuredProject.program}</span>
-            <span class="proj-duration">{featuredProject.duration}</span>
-          </div>
-          <h3 class="proj-name">{featuredProject.name}</h3>
-          <p class="proj-tagline">{featuredProject.tagline}</p>
-          <p class="proj-desc">{featuredProject.description}</p>
-          <a
-            class="proj-cta"
-            href={featuredProject.href}
-            target={featuredProject.external ? "_blank" : undefined}
-            rel={featuredProject.external ? "noopener noreferrer" : undefined}
-          >
-            {featuredProject.external ? "Visit website ↗" : "Read project →"}
-          </a>
-        </div>
-        <div class="proj-logo-aside">
+
+      <!-- Left aside: logo + metadata stack -->
+      <div class="proj-aside">
+        <div class="proj-logo-box">
           <Image
             src={featuredProject.logoSrc}
             alt={featuredProject.logoAlt}
@@ -92,17 +81,54 @@ const secondaryProjects = [
             class="proj-logo dark:brightness-[2]"
           />
         </div>
+        <dl class="proj-meta-stack">
+          <div class="proj-meta-item">
+            <dt class="proj-meta-label">Programme</dt>
+            <dd class="proj-meta-val">{featuredProject.program}</dd>
+          </div>
+          <div class="proj-meta-item">
+            <dt class="proj-meta-label">Duration</dt>
+            <dd class="proj-meta-val">{featuredProject.duration}</dd>
+          </div>
+          <div class="proj-meta-item">
+            <dt class="proj-meta-label">AM Role</dt>
+            <dd class="proj-meta-val proj-meta-role">{featuredProject.role}</dd>
+          </div>
+        </dl>
       </div>
+
+      <!-- Right copy -->
+      <div class="proj-featured-copy">
+        <h3 class="proj-name">{featuredProject.name}</h3>
+        <p class="proj-tagline">{featuredProject.tagline}</p>
+        <p class="proj-desc">{featuredProject.description}</p>
+        <div class="proj-areas" role="list" aria-label="Research areas">
+          {featuredProject.areas.map((area) => (
+            <span class="proj-area-tag" role="listitem">{area}</span>
+          ))}
+        </div>
+        <a
+          class="proj-cta"
+          href={featuredProject.href}
+          target={featuredProject.external ? "_blank" : undefined}
+          rel={featuredProject.external ? "noopener noreferrer" : undefined}
+        >
+          {featuredProject.external ? "Visit website ↗" : "Read project →"}
+        </a>
+      </div>
+
     </article>
 
-    <!-- Secondary projects -->
+    <!-- ── Secondary projects ─────────────────────────── -->
     <div class="proj-grid">
       {
         secondaryProjects.map((project) => (
           <article class="proj-card" style={`--proj-accent: ${project.accent}`}>
-            <div class="proj-meta-row">
-              <span class="proj-program">{project.program}</span>
-              <span class="proj-duration">{project.duration}</span>
+            <div class="proj-card-top">
+              <div class="proj-card-meta">
+                <span class="proj-program">{project.program}</span>
+                <span class="proj-duration">{project.duration}</span>
+              </div>
               <Image
                 src={project.logoSrc}
                 alt={project.logoAlt}
@@ -116,6 +142,11 @@ const secondaryProjects = [
             <h3 class="proj-name">{project.name}</h3>
             <p class="proj-tagline">{project.tagline}</p>
             <p class="proj-desc proj-desc--clamp">{project.description}</p>
+            <div class="proj-areas" role="list" aria-label="Research areas">
+              {project.areas.map((area) => (
+                <span class="proj-area-tag" role="listitem">{area}</span>
+              ))}
+            </div>
             <a
               class="proj-cta"
               href={project.href}
@@ -151,6 +182,7 @@ const secondaryProjects = [
     background: var(--panel);
     box-shadow: var(--shadow-soft);
     overflow: hidden;
+    display: flex;
     transition: border-color 150ms ease, box-shadow 200ms ease;
   }
 
@@ -162,9 +194,10 @@ const secondaryProjects = [
     width: 3px;
     border-radius: 12px 0 0 12px;
     background: var(--proj-accent);
+    z-index: 1;
   }
 
-  /* Top-left tint overlay */
+  /* Top-left tint */
   .proj-featured::after {
     content: "";
     position: absolute;
@@ -181,54 +214,97 @@ const secondaryProjects = [
   .proj-featured:hover,
   .proj-featured:focus-within {
     border-color: color-mix(in srgb, var(--proj-accent) 42%, var(--border));
-    box-shadow: var(--shadow-strong), inset 0 2px 0 color-mix(in srgb, var(--proj-accent) 55%, transparent);
+    box-shadow: var(--shadow-strong), inset 0 2px 0 color-mix(in srgb, var(--proj-accent) 50%, transparent);
   }
 
-  .proj-featured-inner {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    gap: 2rem;
-    align-items: flex-start;
-    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
-  }
-
-  .proj-featured-copy {
-    flex: 1 1 0;
-    min-width: 0;
+  /* ── Featured left aside ────────────────────────────── */
+  .proj-aside {
+    flex-shrink: 0;
+    width: 11.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.4rem;
+    gap: 1.25rem;
+    padding: 1.5rem 0 1.5rem 1.75rem;
+    position: relative;
+    z-index: 1;
   }
 
-  .proj-logo-aside {
-    flex-shrink: 0;
-    align-self: flex-start;
+  .proj-aside::after {
+    content: "";
+    position: absolute;
+    top: 1rem;
+    bottom: 1rem;
+    right: 0;
+    width: 1px;
+    background: var(--border);
+  }
+
+  .proj-logo-box {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.65rem 0.875rem;
+    padding: 0.7rem;
     border: 1px solid var(--border);
     border-radius: 8px;
     background: var(--surface);
+    min-height: 4rem;
   }
 
   .proj-logo {
-    height: 3.25rem;
+    height: 2.75rem;
     width: auto;
     max-width: 9rem;
     object-fit: contain;
     display: block;
   }
 
-  /* ── Shared type atoms ──────────────────────────────── */
-  .proj-meta-row {
+  .proj-meta-stack {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.875rem;
   }
 
+  .proj-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .proj-meta-label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    line-height: 1;
+    opacity: 0.7;
+  }
+
+  .proj-meta-val {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .proj-meta-role {
+    color: color-mix(in srgb, var(--proj-accent) 80%, var(--text));
+  }
+
+  /* ── Featured right copy ────────────────────────────── */
+  .proj-featured-copy {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    padding: 1.5rem 1.5rem 1.5rem 1.625rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Shared type atoms ──────────────────────────────── */
   .proj-program {
     font-size: 0.67rem;
     font-weight: 600;
@@ -252,23 +328,12 @@ const secondaryProjects = [
     line-height: 1.3;
   }
 
-  .proj-card-logo {
-    height: 1.35rem;
-    width: auto;
-    max-width: 4rem;
-    object-fit: contain;
-    opacity: 0.7;
-    display: block;
-    margin-left: auto;
-  }
-
   .proj-name {
     font-size: clamp(1.1rem, 1.5vw, 1.3rem);
     font-weight: 700;
     color: var(--text);
     letter-spacing: -0.02em;
     line-height: 1.15;
-    margin-top: 0.1rem;
   }
 
   .proj-tagline {
@@ -276,13 +341,13 @@ const secondaryProjects = [
     font-weight: 500;
     color: var(--text);
     line-height: 1.45;
-    opacity: 0.72;
+    opacity: 0.7;
   }
 
   .proj-desc {
     font-size: 0.875rem;
     color: var(--muted);
-    line-height: 1.6;
+    line-height: 1.65;
     margin-top: 0.05rem;
   }
 
@@ -293,6 +358,29 @@ const secondaryProjects = [
     overflow: hidden;
   }
 
+  /* ── Area tags ──────────────────────────────────────── */
+  .proj-areas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.25rem;
+  }
+
+  .proj-area-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.65rem;
+    font-weight: 500;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    color: var(--muted);
+    background: var(--surface);
+    letter-spacing: 0.02em;
+  }
+
+  /* ── CTA ────────────────────────────────────────────── */
   .proj-cta {
     display: inline-flex;
     align-items: center;
@@ -300,7 +388,7 @@ const secondaryProjects = [
     font-weight: 600;
     color: var(--accent);
     text-decoration: none;
-    margin-top: 0.35rem;
+    margin-top: 0.4rem;
     transition: opacity 120ms ease;
   }
 
@@ -358,7 +446,34 @@ const secondaryProjects = [
     box-shadow: var(--shadow-strong), inset 0 2px 0 color-mix(in srgb, var(--proj-accent) 50%, transparent);
   }
 
-  /* ── Reduced-motion override ─────────────────────────── */
+  .proj-card-top {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.1rem;
+  }
+
+  .proj-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+  }
+
+  .proj-card-logo {
+    height: 1.3rem;
+    width: auto;
+    max-width: 3.75rem;
+    object-fit: contain;
+    opacity: 0.65;
+    display: block;
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  /* ── Reduced-motion ──────────────────────────────────── */
   @media (prefers-reduced-motion: reduce) {
     .proj-featured,
     .proj-card {
@@ -367,13 +482,53 @@ const secondaryProjects = [
   }
 
   /* ── Responsive ─────────────────────────────────────── */
-  @media (max-width: 639px) {
-    .proj-logo-aside {
+  @media (max-width: 767px) {
+    .proj-featured {
+      flex-direction: column;
+    }
+
+    .proj-aside {
+      width: 100%;
+      padding: 1.25rem 1.25rem 1rem 1.5rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .proj-aside::after {
       display: none;
     }
 
-    .proj-featured-inner {
-      padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+    .proj-logo-box {
+      min-height: auto;
+      padding: 0.5rem 0.65rem;
+      align-self: flex-start;
+    }
+
+    .proj-logo {
+      height: 2rem;
+    }
+
+    .proj-meta-stack {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      flex: 1 1 auto;
+    }
+
+    .proj-meta-item {
+      gap: 0.15rem;
+    }
+
+    .proj-featured-copy {
+      padding: 0 1.25rem 1.25rem 1.5rem;
+    }
+  }
+
+  @media (max-width: 479px) {
+    .proj-card-logo {
+      display: none;
     }
   }
 </style>

@@ -233,6 +233,10 @@ a:focus {
   color: var(--muted);
 }
 
+.title-dim {
+  color: var(--muted);
+}
+
 .container-wide {
   @apply mx-auto w-full max-w-7xl px-4;
 }
