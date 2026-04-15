@@ -2,298 +2,521 @@
 import { Image } from "astro:assets";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import Header from "../../../components/Header.astro";
-import Hero from "../../../components/Hero.astro";
 import ProjectInformation from "../../../components/ProjectInformation.astro";
 import ProjectPartners from "../../../components/ProjectPartners.astro";
 import Footer from "../../../components/Footer.astro";
 ---
 
 <BaseLayout
-  title="Elastic Project | Abstract Machines"
-  description="ELASTIC: Efficient, portabLe And Secure orchesTration for reLIable serviCes in 6G networks."
+  title="ELASTIC Project | Abstract Machines"
+  description="Efficient, portabLe And Secure orchesTration for reliable servICes in 6G networks. Abstract Machines leads WP2 FaaS and edge orchestration."
 >
   <Header />
   <main>
-    <Hero
-      eyebrow="Research Project"
-      title="ELASTIC"
-      subtitle="Efficient, portabLe And Secure orchesTration for reliable servICes"
-      backgroundClass="hero-grid"
-    >
-      <p slot="meta" class="text-sm font-semibold tracking-wide text-muted">
-        2024-2027
-      </p>
 
-      <div class="flex justify-center lg:justify-end">
-        <div class="rounded-2xl border border-subtle bg-panel p-4">
-          <Image
-            src="/img/logos/elastic.png"
-            alt="Elastic Project Logo"
-            class="h-24 w-auto md:h-28 invert dark:invert-0"
-            width={360}
-            height={140}
-            priority
-            decoding="async"
-          />
+    <!-- ── Hero ──────────────────────────────────────────── -->
+    <section class="proj-hero">
+      <div class="container-wide">
+        <div class="proj-hero-inner">
+
+          <div class="proj-kicker-row">
+            <p class="section-label">EU Horizon Europe · Research Project</p>
+            <span class="proj-status proj-status--active">Active</span>
+          </div>
+
+          <div class="proj-logo-wrap">
+            <Image
+              src="/img/logos/elastic.png"
+              alt="ELASTIC project logo"
+              width={360}
+              height={140}
+              loading="eager"
+              decoding="async"
+              class="proj-logo invert dark:invert-0"
+            />
+          </div>
+
+          <h1 class="proj-title">ELASTIC</h1>
+          <p class="proj-subtitle">
+            Efficient, portabLe And Secure orchesTration for reliable servICes in 6G networks
+          </p>
+
+          <dl class="proj-meta-strip">
+            <div class="proj-meta-item">
+              <dt class="proj-meta-label">Duration</dt>
+              <dd class="proj-meta-val">2024–2027</dd>
+            </div>
+            <div class="proj-meta-item">
+              <dt class="proj-meta-label">Budget</dt>
+              <dd class="proj-meta-val">€4 Million</dd>
+            </div>
+            <div class="proj-meta-item">
+              <dt class="proj-meta-label">Coordinator</dt>
+              <dd class="proj-meta-val">Technical University of Crete</dd>
+            </div>
+            <div class="proj-meta-item">
+              <dt class="proj-meta-label">AM Role</dt>
+              <dd class="proj-meta-val proj-meta-val--accent">WP2 Lead — FaaS &amp; Edge</dd>
+            </div>
+          </dl>
+
+          <div class="proj-hero-links">
+            <a
+              href="https://elasticproject.eu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button-primary"
+            >Visit Project Site ↗</a>
+            <a
+              href="https://cordis.europa.eu/project/id/101139067"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button-secondary"
+            >View on CORDIS ↗</a>
+          </div>
+
         </div>
       </div>
-    </Hero>
+    </section>
 
-    <section class="py-16">
-      <div class="mx-auto w-full max-w-6xl px-6">
-        <div class="grid gap-12 lg:grid-cols-[2fr_1fr]">
-          <div class="space-y-16">
-            <section aria-labelledby="project-description">
-              <h2
-                id="project-description"
-                class="text-3xl font-semibold tracking-tight md:text-4xl"
-              >
-                Project Description
-              </h2>
-              <p class="mt-6 text-muted md:text-lg leading-relaxed">
+    <!-- ── Body ──────────────────────────────────────────── -->
+    <section class="proj-body">
+      <div class="container-wide">
+        <div class="proj-body-grid">
+
+          <!-- ── Main content ──────────────────────────── -->
+          <div class="proj-main">
+
+            <div class="proj-section">
+              <p class="section-label">Overview</p>
+              <h2 class="proj-section-title">Project Description</h2>
+              <p class="proj-text">
                 ELASTIC redefines service orchestration within 6G networks,
                 integrating cutting-edge technologies like WebAssembly and
-                Confidential Computing to optimize network functionality and
-                security. Our project not only aims to advance the capabilities
-                and reach of connectivity services but also ensures robust
-                security measures across diverse infrastructures.
+                Confidential Computing to optimise network functionality and
+                security. The project advances connectivity services while
+                ensuring robust security across diverse cloud-edge
+                infrastructures.
               </p>
-            </section>
+              <p class="proj-text">
+                By combining WebAssembly, eBPF, Trusted Execution Environments,
+                and Federated Learning, ELASTIC optimises latency, throughput,
+                and cybersecurity resilience — strengthening data privacy and
+                integrity for scalable service delivery across digital and
+                physical domains.
+              </p>
+            </div>
 
-            <section aria-labelledby="project-summary">
-              <h2
-                id="project-summary"
-                class="text-3xl font-semibold tracking-tight md:text-4xl"
-              >
-                Project Summary
-              </h2>
-              <div class="mt-10 grid gap-10 md:grid-cols-2">
+            <div class="proj-section">
+              <p class="section-label">Summary</p>
+              <h2 class="proj-section-title">Project Summary</h2>
+              <div class="proj-summary-grid">
                 <div>
-                  <h3 class="text-lg font-semibold">Key Objectives</h3>
-                  <ul
-                    class="mt-4 list-disc space-y-2 pl-5 text-muted md:text-base"
-                  >
-                    <li>
-                      <strong>Executable Isolation Techniques:</strong> Enhance efficiency,
-                      portability, and security in in-network cloud and edge computing
-                      by analyzing and improving executable isolation across the entire
-                      lifecycle
-                    </li>
-                    <li>
-                      <strong>6G Edge Workload Orchestration:</strong> Develop secure
-                      and efficient orchestration for edge and far-edge IoT workloads
-                      in critical 6G infrastructure, ensuring reliability, trust,
-                      and resilience
-                    </li>
-                    <li>
-                      <strong>Secure Serverless FaaS Orchestration:</strong> Design
-                      architecture-agnostic, secure serverless FaaS orchestration
-                      to support diverse artifacts and workloads, ensuring data authenticity
-                      and trusted digital interactions
-                    </li>
-                    <li>
-                      <strong
-                        >6G Standardization and Technology Dissemination:</strong
-                      > Support the standardization and dissemination of 6G technologies,
-                      aligning with EU supply capabilities for efficient, secure service
-                      deployment
-                    </li>
-                    <li>
-                      <strong
-                        >Confidential and Privacy-Preserving Execution:</strong
-                      > Implement secure, architecture-agnostic execution environments
-                      using confidential computing and privacy-enhancing technologies
-                      for multi-stakeholders
-                    </li>
+                  <p class="proj-sub-head">Key Objectives</p>
+                  <ul class="proj-list">
+                    <li><strong>Executable Isolation:</strong> Enhance efficiency, portability, and security in in-network cloud and edge computing across the entire workload lifecycle.</li>
+                    <li><strong>6G Edge Orchestration:</strong> Develop secure and efficient orchestration for edge and far-edge IoT workloads in critical 6G infrastructure.</li>
+                    <li><strong>Secure FaaS:</strong> Design architecture-agnostic serverless FaaS orchestration supporting diverse artifacts and trusted digital interactions.</li>
+                    <li><strong>6G Standardisation:</strong> Support standardisation and dissemination of 6G technologies aligned with EU supply capabilities.</li>
+                    <li><strong>Confidential Execution:</strong> Implement secure, architecture-agnostic execution environments using confidential computing and privacy-enhancing technologies.</li>
                   </ul>
                 </div>
-
                 <div>
-                  <h3 class="text-lg font-semibold">Expected Outcomes</h3>
-                  <ul
-                    class="mt-4 list-disc space-y-2 pl-5 text-muted md:text-base"
-                  >
-                    <li>
-                      <strong>Cryptographic libraries:</strong> Post-quantum libraries
-                      and SDKs for 6G
-                    </li>
-                    <li>
-                      <strong>Computing framework:</strong> Confidential computing
-                      framework for cloud-edge environments
-                    </li>
-                    <li>
-                      <strong>Privacy protocols:</strong> Privacy-preserving protocols
-                      for heterogeneous 6G networks
-                    </li>
-                    <li>
-                      <strong>Security tools:</strong> Quantum-resistant security
-                      tools and artifacts
-                    </li>
-                    <li>
-                      <strong>Security standards:</strong> Enhanced security standards
-                      for future 6G deployments
-                    </li>
+                  <p class="proj-sub-head">Expected Outcomes</p>
+                  <ul class="proj-list">
+                    <li><strong>Isolation framework:</strong> Reference implementation for WebAssembly-based workload isolation at the edge.</li>
+                    <li><strong>FaaS platform:</strong> Secure, portable serverless orchestration engine for 6G far-edge deployments.</li>
+                    <li><strong>TEE toolchain:</strong> Confidential computing tools and attestation protocols for heterogeneous hardware.</li>
+                    <li><strong>Security standards:</strong> Contributions to 6G security and orchestration standardisation bodies.</li>
+                    <li><strong>Open-source artifacts:</strong> Reusable components for 6G edge security and service orchestration.</li>
                   </ul>
                 </div>
               </div>
-            </section>
+            </div>
 
-            <section aria-labelledby="our-involvement">
-              <h2
-                id="our-involvement"
-                class="text-3xl font-semibold tracking-tight md:text-4xl"
-              >
-                Our Involvement
-              </h2>
-              <p class="mt-6 text-muted md:text-lg leading-relaxed">
+            <div class="proj-section">
+              <p class="section-label">Contribution</p>
+              <h2 class="proj-section-title">Our Involvement</h2>
+              <p class="proj-text">
                 Abstract Machines supports FaaS and workload orchestration at
                 the edge in ELASTIC, enhancing IoT security and monitoring
                 capabilities. Our expertise in IoT security, fine-grained access
-                control, and the Mainflux platform makes us uniquely positioned
-                to advance edge computing and secure orchestration in 6G
-                networks.
+                control, and the Magistrala platform makes us uniquely positioned
+                to advance edge computing and secure orchestration in 6G networks.
               </p>
-
-              <h3 class="mt-10 text-lg font-semibold">Our Responsibilities</h3>
-              <ul class="mt-4 list-disc space-y-2 pl-5 text-muted md:text-base">
-                <li>
-                  <strong>Task 2.1 Leadership (WP2):</strong> Design and development
-                  of lightweight FaaS orchestration, including workload scheduling
-                  and supervision
-                </li>
-                <li>
-                  <strong>Access Control Implementation:</strong> Implementing distributed
-                  access control policies for secure edge computing
-                </li>
-                <li>
-                  <strong>Wasm Optimization:</strong> Assessing efficiency of Wasm
-                  workload execution and exploring eBPF/XDP for low-latency networking
-                </li>
-                <li>
-                  <strong>Task 4.4 Leadership (WP4):</strong> Leveraging OP-TEE protocol
-                  expertise to enhance workload orchestration on constrained IoT devices
-                </li>
-                <li>
-                  <strong>Edge Security Enhancement:</strong> Improving Wasm support
-                  on embedded devices and strengthening Mainflux edge security features
-                </li>
+              <ul class="proj-list">
+                <li><strong>Task 2.1 Leadership (WP2):</strong> Design and development of lightweight FaaS orchestration, including workload scheduling and supervision.</li>
+                <li><strong>Access Control:</strong> Implementing distributed access control policies for secure edge computing environments.</li>
+                <li><strong>Wasm Optimisation:</strong> Assessing efficiency of Wasm workload execution and exploring eBPF/XDP for low-latency networking.</li>
+                <li><strong>Task 4.4 Leadership (WP4):</strong> Leveraging OP-TEE protocol expertise to enhance workload orchestration on constrained IoT devices.</li>
+                <li><strong>Edge Security:</strong> Improving Wasm support on embedded devices and strengthening Magistrala edge security features.</li>
               </ul>
-            </section>
+            </div>
+
+            <div class="proj-section">
+              <p class="section-label">Research Focus</p>
+              <h2 class="proj-section-title">Technical Work Areas</h2>
+              <div class="proj-goal-grid">
+
+                <div class="proj-goal-card card-base">
+                  <svg class="proj-goal-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <rect x="2" y="5" width="16" height="11" rx="1.5" stroke="currentColor" stroke-width="1.4"/>
+                    <path d="M6 9l-2.5 1.5L6 12M14 9l2.5 1.5L14 12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M11 8l-2 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                    <circle cx="16" cy="5" r="2" fill="currentColor" opacity=".5"/>
+                  </svg>
+                  <h3 class="proj-goal-title">WebAssembly &amp; eBPF</h3>
+                  <p class="proj-goal-text">Architecture-agnostic workload isolation via WebAssembly and eBPF/XDP for low-latency in-network computing. Portable execution across cloud, fog, and far-edge devices.</p>
+                </div>
+
+                <div class="proj-goal-card card-base">
+                  <svg class="proj-goal-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <circle cx="10" cy="10" r="2.5" fill="currentColor" opacity=".5"/>
+                    <circle cx="3.5" cy="5" r="1.5" stroke="currentColor" stroke-width="1.3"/>
+                    <circle cx="16.5" cy="5" r="1.5" stroke="currentColor" stroke-width="1.3"/>
+                    <circle cx="3.5" cy="15" r="1.5" stroke="currentColor" stroke-width="1.3"/>
+                    <circle cx="16.5" cy="15" r="1.5" stroke="currentColor" stroke-width="1.3"/>
+                    <path d="M5 5.5L7.5 8.5M15 5.5L12.5 8.5M5 14.5L7.5 11.5M15 14.5L12.5 11.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                  </svg>
+                  <h3 class="proj-goal-title">Edge &amp; FaaS Orchestration</h3>
+                  <p class="proj-goal-text">Lightweight serverless FaaS orchestration for 6G far-edge and IoT. Workload scheduling, supervision, and distributed access control policies at network edge nodes.</p>
+                </div>
+
+                <div class="proj-goal-card card-base">
+                  <svg class="proj-goal-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <rect x="5" y="5" width="10" height="10" rx="1.5" stroke="currentColor" stroke-width="1.4"/>
+                    <rect x="7.5" y="7.5" width="5" height="5" rx="0.75" fill="currentColor" opacity=".5"/>
+                    <path d="M7 3v2M10 3v2M13 3v2M7 15v2M10 15v2M13 15v2M3 7h2M3 10h2M3 13h2M15 7h2M15 10h2M15 13h2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                  </svg>
+                  <h3 class="proj-goal-title">Trusted Execution</h3>
+                  <p class="proj-goal-text">OP-TEE-based confidential computing on constrained IoT devices. Remote attestation, secure enclave abstractions, and TEE-enhanced workload orchestration for 6G infrastructure.</p>
+                </div>
+
+              </div>
+            </div>
+
           </div>
 
-          <aside class="space-y-8">
+          <!-- ── Sidebar ────────────────────────────────── -->
+          <aside class="proj-sidebar">
             <ProjectInformation
               items={[
-                {
-                  label: "Duration",
-                  value: "1 March 2024 - 28 February 2027",
-                },
+                { label: "Duration", value: "1 March 2024 – 28 February 2027" },
                 { label: "Funding Program", value: "Horizon Europe" },
                 { label: "Total Budget", value: "€4 Million" },
-                {
-                  label: "Project Coordinator",
-                  value: "Technical University of Crete",
-                },
+                { label: "Project Coordinator", value: "Technical University of Crete" },
+                { label: "AM Role", value: "WP2 Lead — FaaS & Edge" },
                 { label: "Status", value: "Active", pill: true },
               ]}
               links={[
-                {
-                  label: "Visit Project Site",
-                  href: "https://elasticproject.eu/",
-                },
-                {
-                  label: "View on CORDIS",
-                  href: "https://cordis.europa.eu/project/id/101139067",
-                },
+                { label: "Visit Project Site", href: "https://elasticproject.eu/" },
+                { label: "View on CORDIS", href: "https://cordis.europa.eu/project/id/101139067" },
               ]}
             />
-
             <ProjectPartners
               partners={[
-                {
-                  alt: "Technical University of Crete",
-                  src: "/img/logos/TUC.png",
-                  logoClass: "dark:bg-white",
-                },
-
-                {
-                  alt: "Ericsson",
-                  src: "/img/logos/ericsson.png",
-                  logoClass: "dark:bg-white",
-                },
-                {
-                  alt: "Telefonica",
-                  src: "/img/logos/telefonica.png",
-                  logoClass: "dark:bg-white",
-                },
+                { alt: "Technical University of Crete", src: "/img/logos/TUC.png", logoClass: "dark:bg-white" },
+                { alt: "Ericsson", src: "/img/logos/ericsson.png", logoClass: "dark:bg-white" },
+                { alt: "Telefonica", src: "/img/logos/telefonica.png", logoClass: "dark:bg-white" },
                 { alt: "Thales", src: "/img/logos/THALES.png" },
-                {
-                  alt: "IMEC",
-                  src: "/img/logos/IMEC.png",
-                  logoClass: "dark:bg-white",
-                },
+                { alt: "IMEC", src: "/img/logos/IMEC.png", logoClass: "dark:bg-white" },
                 { alt: "Ultraviolet", src: "/img/logos/ultraviolet.png" },
-                {
-                  alt: "Aalto University",
-                  src: "/img/logos/AAL.png",
-                  logoClass: "dark:bg-white",
-                },
-                {
-                  alt: "Lund University",
-                  src: "/img/logos/LUND.png",
-                  logoClass: "dark:bg-white",
-                },
+                { alt: "Aalto University", src: "/img/logos/AAL.png", logoClass: "dark:bg-white" },
+                { alt: "Lund University", src: "/img/logos/LUND.png", logoClass: "dark:bg-white" },
                 { alt: "Zentriz Lab", src: "/img/logos/zen.png" },
-                {
-                  alt: "Politecnico di Torino",
-                  src: "/img/logos/POLITO.png",
-                  logoClass: "dark:bg-white",
-                },
+                { alt: "Politecnico di Torino", src: "/img/logos/POLITO.png", logoClass: "dark:bg-white" },
                 { alt: "AMA", src: "/img/logos/AMA.png" },
               ]}
             />
           </aside>
+
         </div>
       </div>
     </section>
 
-    <section class="py-16">
-      <div class="mx-auto w-full max-w-6xl px-6">
-        <h2
-          class="text-center text-3xl font-semibold tracking-tight md:text-4xl"
-        >
-          Project Goals &amp; Impact
-        </h2>
-
-        <div class="mt-12">
-          <div class="text-center">
-            <h3 class="text-xl font-semibold md:text-2xl">
-              Elevating Cloud-to-Edge Orchestration with Security and Privacy at
-              its Core
-            </h3>
-            <p
-              class="mx-auto mt-6 max-w-3xl text-muted md:text-lg leading-relaxed"
-            >
-              ELASTIC addresses key challenges in orchestrating secure,
-              efficient services across cloud, fog, and edge infrastructures. By
-              combining emerging technologies like WebAssembly, eBPF, Trusted
-              Execution Environments (TEEs), and Federated Learning, ELASTIC
-              optimizes latency, throughput, and cybersecurity resilience.
-            </p>
-            <p
-              class="mx-auto mt-4 max-w-3xl text-muted md:text-lg leading-relaxed"
-            >
-              Through targeted research and innovation, the project strengthens
-              data privacy and integrity, enabling secure collaboration and
-              scalable service delivery across digital and physical domains.
-              These technologies form the backbone of ELASTIC's approach to
-              revolutionizing 6G service orchestration, aiming to create a more
-              secure, efficient, and flexible networking environment.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
   <Footer />
 </BaseLayout>
+
+<style>
+  /* ── Hero ───────────────────────────────────────────── */
+  .proj-hero {
+    padding: clamp(3rem, 5vw, 5rem) 0 clamp(2.5rem, 4vw, 4rem);
+    text-align: center;
+  }
+
+  .proj-hero-inner {
+    max-width: 50rem;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .proj-kicker-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .proj-status {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    padding: 0.2rem 0.55rem;
+    border-radius: 3px;
+    white-space: nowrap;
+  }
+
+  .proj-status--completed {
+    color: var(--muted);
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .proj-status--active {
+    color: #34c38f;
+    border: 1px solid rgba(52, 195, 143, 0.3);
+    background: rgba(52, 195, 143, 0.08);
+  }
+
+  .proj-logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    margin: 0.25rem 0;
+  }
+
+  .proj-logo {
+    height: 3.75rem;
+    width: auto;
+    max-width: 14rem;
+    object-fit: contain;
+    display: block;
+  }
+
+  .proj-title {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.06;
+    color: var(--text);
+  }
+
+  .proj-subtitle {
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 44ch;
+    margin-top: -0.25rem;
+  }
+
+  .proj-meta-strip {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.5rem 2.5rem;
+    margin: 0.25rem 0;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    width: 100%;
+  }
+
+  .proj-meta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+  }
+
+  .proj-meta-label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    color: var(--muted);
+    opacity: 0.7;
+    line-height: 1;
+  }
+
+  .proj-meta-val {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
+  .proj-meta-val--accent {
+    color: var(--accent);
+  }
+
+  .proj-hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 0.25rem;
+  }
+
+  /* ── Body layout ────────────────────────────────────── */
+  .proj-body {
+    padding: clamp(2.5rem, 4vw, 4rem) 0 clamp(3.5rem, 6vw, 6rem);
+  }
+
+  .proj-body-grid {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  @media (min-width: 1024px) {
+    .proj-body-grid {
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    }
+  }
+
+  /* ── Main content ───────────────────────────────────── */
+  .proj-main {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .proj-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .proj-section-title {
+    font-size: clamp(1.2rem, 2vw, 1.55rem);
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-top: 0.2rem;
+  }
+
+  .proj-text {
+    font-size: 0.9375rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 72ch;
+    margin-top: 0.35rem;
+  }
+
+  .proj-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.65rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .proj-list li {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.7;
+    padding-left: 1.35rem;
+    position: relative;
+  }
+
+  .proj-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    opacity: 0.65;
+    font-style: normal;
+  }
+
+  .proj-summary-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 0.65rem;
+  }
+
+  @media (min-width: 640px) {
+    .proj-summary-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .proj-sub-head {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 0.15rem;
+  }
+
+  /* ── Goal cards ─────────────────────────────────────── */
+  .proj-goal-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+    margin-top: 0.65rem;
+  }
+
+  @media (min-width: 640px) {
+    .proj-goal-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .proj-goal-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .proj-goal-icon {
+    color: var(--accent);
+    opacity: 0.75;
+    flex-shrink: 0;
+  }
+
+  .proj-goal-title {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+  }
+
+  .proj-goal-text {
+    font-size: 0.825rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* ── Sidebar ────────────────────────────────────────── */
+  .proj-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: sticky;
+    top: 5rem;
+  }
+
+  @media (max-width: 1023px) {
+    .proj-sidebar {
+      position: static;
+    }
+  }
+</style>

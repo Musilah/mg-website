@@ -43,7 +43,7 @@ const projects: Project[] = [
       "WebAssembly-based network orchestration with Confidential Computing for efficient, secure service delivery across 6G infrastructures. Enabling dynamic workload distribution from cloud to edge.",
     status: "Active",
     statusTone: "active",
-    year: "2023–2027",
+    year: "2024–2027",
     funding: "EU Horizon Europe",
     areas: ["WebAssembly", "Edge Computing", "Confidential Computing", "6G"],
     logo: "/img/logos/elastic.png",
@@ -247,6 +247,19 @@ const impactStats = [
 
 <style>
   /* ── Project cards ─────────────────────────────────────── */
+  .project-card {
+    transition: border-color 0.18s ease, box-shadow 0.18s ease;
+  }
+
+  .project-card:hover {
+    border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+    box-shadow: var(--shadow-strong), inset 0 2px 0 color-mix(in srgb, var(--accent) 45%, transparent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-card { transition: none; }
+  }
+
   .project-logo-wrap {
     flex-shrink: 0;
     display: flex;
