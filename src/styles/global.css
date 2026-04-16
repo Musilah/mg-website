@@ -229,8 +229,9 @@ a:focus {
 }
 
 .section-subtitle {
-  @apply text-base;
+  @apply text-[1.0rem] leading-relaxed;
   color: var(--muted);
+  max-width: 60ch;
 }
 
 .title-dim {

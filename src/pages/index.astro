@@ -16,7 +16,6 @@ import HomeClosing from "../components/HomeClosing.astro";
   <Header />
   <main>
     <HeroAsymmetric />
-    <ProductsPreview />
 
     <!-- Partners section -->
     <section class="partners-section">
@@ -35,6 +34,7 @@ import HomeClosing from "../components/HomeClosing.astro";
     </section>
 
     <ProjectsPreview />
+    <ProductsPreview />
 
     <HomeClosing />
   </main>
@@ -49,5 +49,10 @@ import HomeClosing from "../components/HomeClosing.astro";
 
   .partners-header {
     margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .partners-header .section-subtitle {
+    margin-inline: auto;
   }
 </style>

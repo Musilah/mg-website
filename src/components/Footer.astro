@@ -258,42 +258,8 @@ const company = [
       <div
         class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
       >
-        <div
-          class="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-muted"
-        >
-          <span>© {year} Abstract Machines. All rights reserved.</span>
-          <span class="whitespace-nowrap"> | </span>
-          <span class="whitespace-nowrap">Theme:</span>
-          <div class="theme-picker" role="group" aria-label="Appearance">
-            <button
-              type="button"
-              class="theme-picker-option"
-              data-theme-option="system"
-              aria-pressed="true"
-              title="Follow system"
-            >
-              <span class="hidden sm:inline">Follow system</span>
-              <span class="sm:hidden">System</span>
-            </button>
-            <button
-              type="button"
-              class="theme-picker-option"
-              data-theme-option="light"
-              aria-pressed="false"
-            >
-              Light
-            </button>
-            <button
-              type="button"
-              class="theme-picker-option"
-              data-theme-option="dark"
-              aria-pressed="false"
-            >
-              Dark
-            </button>
-          </div>
-        </div>
-        <ul class="flex flex-wrap items-center gap-4 text-xs text-muted">
+        <span class="text-sm text-muted">© {year} Abstract Machines. All rights reserved.</span>
+        <ul class="flex flex-wrap items-center gap-4 text-sm text-muted">
           <li><a class="footer-link" href="/terms/">Terms of Service</a></li>
           <li><a class="footer-link" href="/privacy/">Privacy Policy</a></li>
           <li><a class="footer-link" href="/imprint/">Imprint</a></li>

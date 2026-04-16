@@ -2,36 +2,37 @@
 import { Image } from "astro:assets";
 
 const featuredProject = {
-  name: "CONFIDENTIAL6G",
-  tagline: "Quantum-Resistant Security for 6G Networks",
+  name: "ELASTIC",
+  tagline: "Portable, Secure Service Orchestration for 6G",
   description:
-    "Ensuring secure and private computation in the cloud-edge continuum of 6G. Tackling the post-quantum threat by developing modern cryptographic techniques, libraries, and protocols for next-generation telecommunications.",
-  duration: "2023–2025",
+    "WebAssembly-based workload orchestration with Trusted Execution Environments and eBPF/XDP for secure, portable service delivery across the 6G cloud-to-edge continuum. Abstract Machines leads FaaS orchestration and TEE workload management.",
+  duration: "2024–2027",
   program: "EU Horizon Europe",
-  role: "Technical Manager",
-  areas: ["Post-Quantum", "Confidential Computing", "6G Security", "Privacy-Preserving AI"],
-  href: "/projects/confidential6g/",
-  logoSrc: "/img/logos/confidential6G.jpg",
-  logoAlt: "CONFIDENTIAL6G project logo",
+  role: "Task Lead, WP2 & WP4",
+  areas: ["WebAssembly", "FaaS Orchestration", "Trusted Execution", "6G Edge"],
+  href: "/projects/elastic/",
+  logoSrc: "/img/logos/elastic.png",
+  logoAlt: "ELASTIC project logo",
+  logoClass: "invert dark:invert-0",
   external: false,
-  accent: "#4c83ff",
+  accent: "#34c38f",
 };
 
 const secondaryProjects = [
   {
-    name: "Elastic",
-    tagline: "Next-Gen Network Orchestration",
+    name: "CONFIDENTIAL6G",
+    tagline: "Post-Quantum Security for 6G Networks",
     description:
-      "WebAssembly-based orchestration with Confidential Computing for cloud-edge workloads — enabling dynamic, secure service delivery across 6G infrastructures.",
-    duration: "2023–2027",
+      "Post-quantum cryptographic libraries and confidential computing frameworks for the 6G cloud-edge continuum. Abstract Machines served as Technical Manager.",
+    duration: "2023–2025",
     program: "EU Horizon Europe",
-    areas: ["WebAssembly", "Confidential Computing", "6G", "Edge Orchestration"],
-    href: "/projects/elastic/",
-    logoSrc: "/img/logos/elastic.png",
-    logoAlt: "Elastic project logo",
-    logoClass: "invert dark:invert-0",
+    status: "Completed",
+    areas: ["Post-Quantum", "Confidential Computing", "6G Security"],
+    href: "/projects/confidential6g/",
+    logoSrc: "/img/logos/confidential6G.jpg",
+    logoAlt: "CONFIDENTIAL6G project logo",
     external: false,
-    accent: "#34c38f",
+    accent: "#4c83ff",
   },
   {
     name: "EdgeX Foundry",
@@ -78,7 +79,7 @@ const secondaryProjects = [
             height={120}
             loading="lazy"
             decoding="async"
-            class="proj-logo dark:brightness-[2]"
+            class={`proj-logo ${featuredProject.logoClass ?? "dark:brightness-[2]"}`}
           />
         </div>
         <dl class="proj-meta-stack">
@@ -128,6 +129,9 @@ const secondaryProjects = [
               <div class="proj-card-meta">
                 <span class="proj-program">{project.program}</span>
                 <span class="proj-duration">{project.duration}</span>
+                {project.status && (
+                  <span class="proj-status-badge">{project.status}</span>
+                )}
               </div>
               <Image
                 src={project.logoSrc}
@@ -271,7 +275,7 @@ const secondaryProjects = [
   }
 
   .proj-meta-label {
-    font-size: 0.6rem;
+    font-size: 0.625rem;
     font-weight: 600;
     letter-spacing: 0.13em;
     text-transform: uppercase;
@@ -282,7 +286,7 @@ const secondaryProjects = [
   }
 
   .proj-meta-val {
-    font-size: 0.82rem;
+    font-size: 0.875rem;
     font-weight: 600;
     color: var(--text);
     line-height: 1.3;
@@ -306,9 +310,9 @@ const secondaryProjects = [
 
   /* ── Shared type atoms ──────────────────────────────── */
   .proj-program {
-    font-size: 0.67rem;
+    font-size: 0.7rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.11em;
     text-transform: uppercase;
     color: color-mix(in srgb, var(--proj-accent) 85%, var(--muted));
     font-family: 'JetBrains Mono', 'Courier New', monospace;
@@ -316,7 +320,7 @@ const secondaryProjects = [
   }
 
   .proj-duration {
-    font-size: 0.67rem;
+    font-size: 0.7rem;
     font-weight: 600;
     font-family: 'JetBrains Mono', 'Courier New', monospace;
     color: var(--muted);
@@ -329,7 +333,7 @@ const secondaryProjects = [
   }
 
   .proj-name {
-    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+    font-size: clamp(1.1rem, 1.5vw, 1.35rem);
     font-weight: 700;
     color: var(--text);
     letter-spacing: -0.02em;
@@ -337,7 +341,7 @@ const secondaryProjects = [
   }
 
   .proj-tagline {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     font-weight: 500;
     color: var(--text);
     line-height: 1.45;
@@ -345,9 +349,9 @@ const secondaryProjects = [
   }
 
   .proj-desc {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     color: var(--muted);
-    line-height: 1.65;
+    line-height: 1.7;
     margin-top: 0.05rem;
   }
 
@@ -369,8 +373,8 @@ const secondaryProjects = [
   .proj-area-tag {
     display: inline-flex;
     align-items: center;
-    padding: 0.15rem 0.5rem;
-    font-size: 0.65rem;
+    padding: 0.2rem 0.55rem;
+    font-size: 0.7rem;
     font-weight: 500;
     font-family: 'JetBrains Mono', 'Courier New', monospace;
     border: 1px solid var(--border);
@@ -380,11 +384,27 @@ const secondaryProjects = [
     letter-spacing: 0.02em;
   }
 
+  /* ── Completed badge ────────────────────────────────── */
+  .proj-status-badge {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    color: var(--muted);
+    padding: 0.15rem 0.45rem;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    background: var(--surface);
+    white-space: nowrap;
+    opacity: 0.8;
+  }
+
   /* ── CTA ────────────────────────────────────────────── */
   .proj-cta {
     display: inline-flex;
     align-items: center;
-    font-size: 0.825rem;
+    font-size: 0.875rem;
     font-weight: 600;
     color: var(--accent);
     text-decoration: none;
