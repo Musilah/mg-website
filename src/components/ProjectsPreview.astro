@@ -136,8 +136,8 @@ const secondaryProjects = [
               <Image
                 src={project.logoSrc}
                 alt={project.logoAlt}
-                width={72}
-                height={36}
+                width={140}
+                height={56}
                 loading="lazy"
                 decoding="async"
                 class={`proj-card-logo dark:brightness-[2] ${project.logoClass ?? ""}`}
@@ -224,11 +224,11 @@ const secondaryProjects = [
   /* ── Featured left aside ────────────────────────────── */
   .proj-aside {
     flex-shrink: 0;
-    width: 11.5rem;
+    width: 13.5rem;
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    padding: 1.5rem 0 1.5rem 1.75rem;
+    padding: 1.75rem 1.5rem 1.75rem 2rem;
     position: relative;
     z-index: 1;
   }
@@ -303,7 +303,7 @@ const secondaryProjects = [
     display: flex;
     flex-direction: column;
     gap: 0.45rem;
-    padding: 1.5rem 1.5rem 1.5rem 1.625rem;
+    padding: 1.75rem 1.75rem 1.75rem 1.875rem;
     position: relative;
     z-index: 1;
   }
@@ -483,11 +483,11 @@ const secondaryProjects = [
   }
 
   .proj-card-logo {
-    height: 1.3rem;
+    height: 2.25rem;
     width: auto;
-    max-width: 3.75rem;
+    max-width: 7rem;
     object-fit: contain;
-    opacity: 0.65;
+    opacity: 0.85;
     display: block;
     flex-shrink: 0;
     margin-left: auto;
