@@ -8,7 +8,22 @@ export const GET: APIRoute = ({ site }) => {
   const base = site ? new URL(site) : new URL(DEFAULT_SITE);
   const sitemapURL = new URL("/sitemap-index.xml", base).href;
 
-  const body = `User-agent: *\nAllow: /\n\nSitemap: ${sitemapURL}\n`;
+  const body = [
+    "User-agent: *",
+    "Allow: /",
+    "",
+    "User-agent: GPTBot",
+    "Allow: /",
+    "",
+    "User-agent: ClaudeBot",
+    "Allow: /",
+    "",
+    "User-agent: PerplexityBot",
+    "Allow: /",
+    "",
+    `Sitemap: ${sitemapURL}`,
+    "",
+  ].join("\n");
 
   return new Response(body, {
     headers: {

@@ -115,11 +115,21 @@ const engagementModels = [
     meta: "Hourly",
   },
 ];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.absmach.eu" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://www.absmach.eu/services/" },
+  ],
+};
 ---
 
 <BaseLayout
   title="Services | Abstract Machines"
   description="Deployment, development, architecture, and training services for Magistrala and the Abstract Machines infrastructure stack."
+  jsonLd={jsonLd}
 >
   <Header />
   <main>

@@ -1,0 +1,134 @@
+# Abstract Machines — Full Site Reference
+
+> This file provides a structured, machine-readable description of the Abstract Machines website for use by AI language models and search systems.
+
+---
+
+## Company
+
+**Name:** Abstract Machines
+**Founded:** 2017
+**Headquarters:** 141 Quai de Valmy, 75010 Paris, France
+**Website:** https://www.absmach.eu
+**GitHub:** https://github.com/absmach
+
+Abstract Machines builds open-source software and RISC-V hardware for secure, event-driven connectivity across IoT, messaging, orchestration, and distributed systems. The company participates in EU Horizon Europe research programmes and collaborates with universities, research institutes, and industry partners across Europe.
+
+**Mission:** To democratize access to enterprise-grade infrastructure through open-source software.
+
+---
+
+## Products
+
+### Magistrala
+**Type:** Open-source IoT platform (software)
+**URL:** https://magistrala.absmach.eu
+**Product page:** https://www.absmach.eu/products/
+
+Magistrala is the flagship platform of the Abstract Machines stack. It provides multi-protocol device connectivity (MQTT, CoAP, HTTP, WebSocket), policy-based and role-based access control, time-series data ingestion and querying, multi-tenant architecture, and Kubernetes-native horizontal scaling. Originally launched as Mainflux in 2017.
+
+### Propeller
+**Type:** Open-source orchestration engine (software)
+**URL:** https://propeller.absmach.eu
+**Product page:** https://www.absmach.eu/products/
+
+Propeller runs WebAssembly workloads across cloud, edge environments, and microcontrollers without recompilation. It includes a real-time rule engine for event processing and workload scheduling across mixed cloud-edge-MCU deployments.
+
+### FluxMQ
+**Type:** Open-source MQTT broker (software)
+**URL:** https://fluxmq.absmach.eu
+**Product page:** https://www.absmach.eu/products/
+
+FluxMQ is a purpose-built message broker for reliable distributed connectivity. It delivers durable event transport, low-latency routing, and integrates natively with the Magistrala platform. Supports MQTT 3.1.1 and 5.0.
+
+### S0 Gateway
+**Type:** RISC-V hardware — low-power edge node
+**URL:** https://hardware.absmach.eu
+**Product page:** https://www.absmach.eu/products/
+
+Ultra-low-power gateway based on RISC-V (ESP32-S3) with WiFi, BLE, and Zigbee radio support. Designed for sensor nodes, smart metering, and lightweight edge deployments. Runs Magistrala and FluxMQ.
+
+### S1 Gateway
+**Type:** RISC-V hardware — industrial edge system
+**URL:** https://hardware.absmach.eu
+**Product page:** https://www.absmach.eu/products/
+
+Industrial-grade dual-core RISC-V gateway with Ethernet, WiFi, and LTE connectivity. Rated for −40°C to +85°C environments. Designed for industrial IoT, fleet management, and critical infrastructure. Runs Magistrala and Propeller.
+
+---
+
+## Services
+
+**URL:** https://www.absmach.eu/services/
+
+Abstract Machines offers professional services for the deployment and extension of its open-source stack:
+- **Deployment** — production deployment of Magistrala and related tools
+- **Development** — custom feature development and integration
+- **Architecture** — infrastructure architecture and consulting
+- **Training** — team training on the Abstract Machines stack
+
+---
+
+## Solutions
+
+**URL:** https://www.absmach.eu/solutions/
+
+The Abstract Machines stack is deployed across:
+- Industrial IoT
+- Smart city infrastructure
+- Healthcare connectivity
+- Fleet management
+- Energy systems
+- 6G and edge computing research
+
+---
+
+## Research & Projects
+
+**URL:** https://www.absmach.eu/projects/
+
+Abstract Machines participates in EU Horizon Europe programmes and open-source ecosystem initiatives, including projects focused on 6G, edge computing, confidential computing, and secure distributed systems.
+
+Notable projects:
+- **CONFIDENTIAL6G** — Confidential computing and privacy-preserving technologies for 6G (EU Horizon Europe). Abstract Machines serves as Technical Manager.
+- **ELASTIC** — Efficient, portable and secure orchestration for reliable services in 6G networks. Abstract Machines leads WP2 (FaaS and edge orchestration).
+
+---
+
+## Blog
+
+**URL:** https://www.absmach.eu/blog/
+**RSS:** https://www.absmach.eu/rss.xml
+
+Technical articles, product updates, and engineering deep dives from the Abstract Machines team.
+
+---
+
+## Open Source
+
+**URL:** https://www.absmach.eu/open-source/
+**GitHub:** https://github.com/absmach
+
+Abstract Machines publishes its core products as open-source software. The company treats open-source governance as product work and maintains transparent, auditable repositories.
+
+---
+
+## Legal & Trust
+
+- Privacy Policy: https://www.absmach.eu/privacy/
+- Terms of Service: https://www.absmach.eu/terms/
+- Legal Notice (Imprint): https://www.absmach.eu/imprint/
+
+---
+
+## Contact
+
+**URL:** https://www.absmach.eu/contact/
+
+For production deployments, research collaboration, and open-source questions. Email is preferred for technical discussions; GitHub for issues and pull requests.
+
+---
+
+## Sitemap
+
+https://www.absmach.eu/sitemap-index.xml

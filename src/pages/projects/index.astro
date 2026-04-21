@@ -108,11 +108,21 @@ const impactStats = [
   { value: "5+", label: "EU-funded projects" },
   { value: "15+", label: "Research partners" },
 ];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.absmach.eu" },
+    { "@type": "ListItem", position: 2, name: "Projects", item: "https://www.absmach.eu/projects/" },
+  ],
+};
 ---
 
 <BaseLayout
   title="Projects | Abstract Machines"
   description="Explore research projects and collaborations involving Abstract Machines across edge computing, 6G, and secure distributed systems."
+  jsonLd={jsonLd}
 >
   <Header />
 

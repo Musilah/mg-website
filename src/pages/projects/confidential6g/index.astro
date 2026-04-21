@@ -5,11 +5,22 @@ import Header from "../../../components/Header.astro";
 import ProjectInformation from "../../../components/ProjectInformation.astro";
 import ProjectPartners from "../../../components/ProjectPartners.astro";
 import Footer from "../../../components/Footer.astro";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.absmach.eu" },
+    { "@type": "ListItem", position: 2, name: "Projects", item: "https://www.absmach.eu/projects/" },
+    { "@type": "ListItem", position: 3, name: "CONFIDENTIAL6G", item: "https://www.absmach.eu/projects/confidential6g/" },
+  ],
+};
 ---
 
 <BaseLayout
   title="CONFIDENTIAL6G | Abstract Machines"
   description="Confidential Computing and Privacy-Preserving Technologies for 6G. Abstract Machines serves as Technical Manager on this EU Horizon Europe project."
+  jsonLd={jsonLd}
 >
   <Header />
   <main>

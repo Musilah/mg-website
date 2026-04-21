@@ -82,11 +82,21 @@ const deployments: Deployment[] = [
     points: ["Network slicing", "Microservice orchestration", "Cloud-edge continuum"],
   },
 ];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.absmach.eu" },
+    { "@type": "ListItem", position: 2, name: "Solutions", item: "https://www.absmach.eu/solutions/" },
+  ],
+};
 ---
 
 <BaseLayout
   title="Solutions | Abstract Machines"
   description="IoT and edge computing solutions across industrial, smart city, healthcare, fleet, and energy use cases — built on the Abstract Machines open-source stack."
+  jsonLd={jsonLd}
 >
   <Header />
   <main>

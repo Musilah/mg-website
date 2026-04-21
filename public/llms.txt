@@ -1,0 +1,32 @@
+# Abstract Machines
+
+> Open-source infrastructure company building secure, event-driven connectivity for IoT, edge computing, and distributed systems.
+
+Abstract Machines was founded in 2017 and is headquartered in Paris, France. The company develops open-source software and RISC-V hardware for cloud-to-edge deployments, serving enterprises, research institutions, and innovators across Europe and beyond.
+
+## Main Products
+
+- **Magistrala** — Flagship open-source IoT platform. Multi-protocol device connectivity (MQTT, CoAP, HTTP, WebSocket), policy-based access control, time-series data, and multi-tenant architecture. https://magistrala.absmach.eu
+- **Propeller** — WebAssembly orchestration and IoT rule engine for cloud, edge, and microcontroller targets. https://propeller.absmach.eu
+- **FluxMQ** — Durable, low-latency MQTT broker for distributed event streams. https://fluxmq.absmach.eu
+- **S0 Gateway** — Ultra-low-power RISC-V edge node (ESP32-S3, WiFi/BLE/Zigbee). https://hardware.absmach.eu
+- **S1 Gateway** — Industrial-grade RISC-V gateway (dual-core, Ethernet/WiFi/LTE, −40°C to +85°C). https://hardware.absmach.eu
+
+## Key URLs
+
+- Homepage: https://www.absmach.eu
+- Products: https://www.absmach.eu/products/
+- Services: https://www.absmach.eu/services/
+- Solutions: https://www.absmach.eu/solutions/
+- Blog: https://www.absmach.eu/blog/
+- Projects & Research: https://www.absmach.eu/projects/
+- Company: https://www.absmach.eu/company/
+- Open Source: https://www.absmach.eu/open-source/
+- Contact: https://www.absmach.eu/contact/
+- Privacy Policy: https://www.absmach.eu/privacy/
+- Terms of Service: https://www.absmach.eu/terms/
+- Legal Notice: https://www.absmach.eu/imprint/
+
+## Source Code
+
+- GitHub: https://github.com/absmach
