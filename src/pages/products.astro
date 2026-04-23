@@ -63,8 +63,8 @@ const software = [
     href: "https://fluxmq.absmach.eu",
     logoSrc: null,
     logoAlt: "FluxMQ",
-    screenshotSrc: "/img/blogs/fluxmq-architecture/architecture-1.png",
-    screenshotAlt: "FluxMQ architecture",
+    screenshotSrc: "/img/flux-ui.png",
+    screenshotAlt: "FluxMQ dashboard — cluster overview, message traffic, and active connections",
     accent: "#f4a62a",
     featured: false,
     isFluxMQ: true,
@@ -117,7 +117,7 @@ const hardware = [
     <!-- Page header -->
     <section class="products-page-hero">
       <div class="container-wide">
-        <p class="section-label">Products</p>
+        <p class="products-page-kicker">Products</p>
         <h1 class="products-page-title">Five products.<br><span class="title-dim">One coherent stack.</span></h1>
         <p class="products-page-sub">
           Open-source software and RISC-V hardware for secure, event-driven connectivity
@@ -305,21 +305,30 @@ const hardware = [
     align-items: center;
   }
 
+  .products-page-kicker {
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.9;
+  }
+
   .products-page-title {
-    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    font-size: clamp(2.7rem, 6vw, 4.75rem);
     font-weight: 700;
     letter-spacing: -0.04em;
-    line-height: 1.06;
+    line-height: 1.02;
     color: var(--text);
-    margin-top: 0.65rem;
+    margin-top: 0.75rem;
   }
 
   .products-page-sub {
-    font-size: clamp(0.95rem, 1.35vw, 1.05rem);
+    font-size: clamp(1rem, 1.5vw, 1.18rem);
     color: var(--muted);
-    line-height: 1.75;
-    margin-top: 0.9rem;
-    max-width: 56ch;
+    line-height: 1.72;
+    margin-top: 1rem;
+    max-width: 54ch;
     text-align: center;
   }
 
@@ -491,7 +500,7 @@ const hardware = [
   }
 
   .product-description {
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: var(--muted);
     line-height: 1.7;
     max-width: 46ch;
@@ -587,15 +596,18 @@ const hardware = [
     overflow: hidden;
     border-bottom: 1px solid var(--border);
     background: var(--surface);
+    max-height: 240px;
     flex-shrink: 0;
   }
 
-  .pv-screenshot-diagram { background: var(--surface-2); }
+  .pv-screenshot-diagram { background: #f8f9fc; }
+
+  :root[data-theme="dark"] .pv-screenshot-diagram { background: #1a1d24; }
 
   .pv-screenshot-img {
     display: block;
     width: 100%;
-    height: 200px;
+    height: 240px;
     object-fit: cover;
     object-position: top left;
   }
@@ -603,7 +615,21 @@ const hardware = [
   .pv-screenshot-diagram .pv-screenshot-img {
     object-fit: contain;
     padding: 0.75rem;
-    height: 180px;
+    height: 220px;
+  }
+
+  @media (min-width: 1024px) {
+    .pv-screenshot-wrap {
+      max-height: 280px;
+    }
+
+    .pv-screenshot-img {
+      height: 280px;
+    }
+
+    .pv-screenshot-diagram .pv-screenshot-img {
+      height: 260px;
+    }
   }
 
   .pv-copy {

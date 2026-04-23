@@ -149,12 +149,12 @@ const impactStats = [
                         decoding="async"
                       />
                     ) : (
-                      <span class="text-sm font-semibold text-muted">{project.name.slice(0,3)}</span>
+                      <span class="text-base font-semibold text-muted">{project.name.slice(0,3)}</span>
                     )}
                   </div>
                   <div class="min-w-0">
                     <h3 class="text-lg font-semibold leading-tight">{project.name}</h3>
-                    <p class="mt-1 text-sm text-muted">{project.tagline}</p>
+                    <p class="mt-1 text-base text-muted">{project.tagline}</p>
                   </div>
                 </div>
                 <span class={`project-status project-status--${project.statusTone}`}>
@@ -162,7 +162,7 @@ const impactStats = [
                 </span>
               </div>
 
-              <p class="mt-4 text-sm text-muted leading-relaxed">{project.description}</p>
+              <p class="mt-4 text-base text-muted leading-relaxed">{project.description}</p>
 
               <div class="mt-4 flex flex-wrap gap-1.5">
                 {project.areas.map((area) => (
@@ -183,7 +183,7 @@ const impactStats = [
 
               <div class="mt-auto pt-4">
                 <a
-                  class="inline-flex text-sm font-semibold text-accent hover:opacity-75 transition-opacity"
+                  class="inline-flex text-base font-semibold text-accent hover:opacity-75 transition-opacity"
                   href={project.link}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noopener noreferrer" : undefined}
@@ -218,7 +218,7 @@ const impactStats = [
               <path d={area.icon} />
             </svg>
             <h3 class="text-base font-semibold">{area.title}</h3>
-            <p class="mt-2 text-sm text-muted leading-relaxed">{area.description}</p>
+            <p class="mt-2 text-base text-muted leading-relaxed">{area.description}</p>
           </article>
         ))}
       </div>
@@ -229,7 +229,7 @@ const impactStats = [
         {impactStats.map((stat) => (
           <article class="card-base text-center">
             <p class="text-4xl font-semibold tracking-tight text-accent">{stat.value}</p>
-            <p class="mt-2 text-sm text-muted">{stat.label}</p>
+            <p class="mt-2 text-base text-muted">{stat.label}</p>
           </article>
         ))}
       </div>
@@ -317,7 +317,7 @@ const impactStats = [
   }
 
   .project-dl-value {
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-weight: 600;
     color: var(--text);
     margin-top: 0.2rem;

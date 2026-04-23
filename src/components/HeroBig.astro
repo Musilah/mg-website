@@ -13,8 +13,8 @@ const {
   <div class="container-wide">
     <div class="page-hero-inner">
       {kicker
-        ? <p class="section-label">{kicker}</p>
-        : <p class="section-label" aria-hidden="true">Abstract Machines</p>
+        ? <p class="page-hero-kicker">{kicker}</p>
+        : <p class="page-hero-kicker" aria-hidden="true">Abstract Machines</p>
       }
       <h1 class="page-hero-title">{title}</h1>
       {subtitle && <p class="page-hero-subtitle">{subtitle}</p>}
@@ -59,21 +59,30 @@ const {
     margin-inline: auto;
   }
 
-  .page-hero-title {
-    font-size: clamp(2.25rem, 5vw, 3.75rem);
+  .page-hero-kicker {
+    font-size: 0.76rem;
     font-weight: 700;
-    letter-spacing: -0.035em;
-    line-height: 1.08;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.9;
+  }
+
+  .page-hero-title {
+    font-size: clamp(2.7rem, 6vw, 4.75rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.02;
     color: var(--text);
-    margin-top: 0.65rem;
+    margin-top: 0.75rem;
   }
 
   .page-hero-subtitle {
-    font-size: clamp(0.95rem, 1.35vw, 1.05rem);
+    font-size: clamp(1rem, 1.5vw, 1.18rem);
     color: var(--muted);
-    line-height: 1.75;
-    margin-top: 0.9rem;
-    max-width: 58ch;
+    line-height: 1.72;
+    margin-top: 1rem;
+    max-width: 54ch;
     margin-inline: auto;
   }
 

@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import FinalCTA from "../components/FinalCTA.astro";
 import Section from "../components/Section.astro";
+import HeroBig from "../components/HeroBig.astro";
 
 const benefits = [
   {
@@ -53,18 +54,11 @@ const steps = [
   <Header />
   <main>
 
-    <!-- Page header -->
-    <section class="careers-hero">
-      <div class="container-wide">
-        <p class="section-label">Careers</p>
-        <h1 class="careers-hero-title">Work on infrastructure<br>that matters.</h1>
-        <p class="careers-hero-sub">
-          Abstract Machines is a small, technical team in Paris building open-source
-          software and hardware for distributed systems. We work on hard problems
-          in IoT, edge computing, and 6G — and we ship to production.
-        </p>
-      </div>
-    </section>
+    <HeroBig
+      kicker="Careers"
+      title="Work on infrastructure that matters."
+      subtitle="Abstract Machines is a small, technical team in Paris building open-source software and hardware for distributed systems. We work on hard problems in IoT, edge computing, and 6G — and we ship to production."
+    />
 
     <!-- Why join -->
     <Section title="Why Abstract Machines?" subtitle="What it's like to work here.">
@@ -85,7 +79,7 @@ const steps = [
             </svg>
             <div>
               <h3 class="font-semibold text-base">{b.title}</h3>
-              <p class="mt-1 text-sm text-muted leading-relaxed">{b.description}</p>
+              <p class="mt-1 text-base text-muted leading-relaxed">{b.description}</p>
             </div>
           </article>
         ))}
@@ -130,30 +124,6 @@ const steps = [
 </BaseLayout>
 
 <style>
-  /* ── Hero ─────────────────────────────────────────────── */
-  .careers-hero {
-    padding-top: clamp(2.5rem, 5vw, 4rem);
-    padding-bottom: clamp(2rem, 3.5vw, 3rem);
-  }
-
-  .careers-hero-title {
-    font-size: clamp(2rem, 4.5vw, 3.25rem);
-    font-weight: 700;
-    letter-spacing: -0.035em;
-    line-height: 1.08;
-    color: var(--text);
-    margin-top: 0.65rem;
-    max-width: 18ch;
-  }
-
-  .careers-hero-sub {
-    font-size: clamp(0.95rem, 1.35vw, 1.05rem);
-    color: var(--muted);
-    line-height: 1.75;
-    margin-top: 1rem;
-    max-width: 56ch;
-  }
-
   /* ── Open positions ───────────────────────────────────── */
   .positions-empty {
     max-width: 40rem;
