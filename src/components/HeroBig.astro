@@ -16,7 +16,7 @@ const {
         ? <p class="page-hero-kicker">{kicker}</p>
         : <p class="page-hero-kicker" aria-hidden="true">Abstract Machines</p>
       }
-      <h1 class="page-hero-title">{title}</h1>
+      <h1 class="page-hero-title" set:html={title} />
       {subtitle && <p class="page-hero-subtitle">{subtitle}</p>}
       {(primary || secondary) && (
         <div class="page-hero-ctas">
@@ -75,6 +75,10 @@ const {
     line-height: 1.02;
     color: var(--text);
     margin-top: 0.75rem;
+  }
+
+  .page-hero-title :global(.hero-title-muted) {
+    color: var(--muted);
   }
 
   .page-hero-subtitle {
